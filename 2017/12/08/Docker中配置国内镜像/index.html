@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Docker中配置国内镜像 · Hexo</title><meta name="description" content="Docker中配置国内镜像 - John Doe"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Hexo"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Docker中配置国内镜像</h1><div class="post-info">Dec 8, 2017</div><div class="post-content"><h2 id="1-为什么要为docker配置国内镜像"><a href="#1-为什么要为docker配置国内镜像" class="headerlink" title="1. 为什么要为docker配置国内镜像"></a><strong>1. 为什么要为docker配置国内镜像</strong></h2><p>在正常情况下，docker有一个默认连接的国外官方镜像，在国外的网友访问该官方镜像自然不成问题，但是国内毕竟不是国外，由于国情不同，中国的网络访问国外官方镜像网速一向很慢，而且往往还会遭遇断网的窘境，所以说我们要想正常使用docker的镜像，那么我们就不得不配置相应的国内镜像。</p>
+<h2 id="2-可以使用的国内镜像有哪些"><a href="#2-可以使用的国内镜像有哪些" class="headerlink" title="2. 可以使用的国内镜像有哪些"></a><strong>2. 可以使用的国内镜像有哪些</strong></h2><p>Docker可以配置的国内镜像有很多可供选择，比如说：阿里云，网易蜂巢，DaoCloud，Docker中国区官方镜像等，这些都是可以提供给大家随意选择的不错的镜像仓库。</p>
+<h2 id="3-配置Docker中国区官方镜像"><a href="#3-配置Docker中国区官方镜像" class="headerlink" title="3. 配置Docker中国区官方镜像"></a><strong>3. 配置Docker中国区官方镜像</strong></h2><h3 id="1-Docker中国区官方镜像简介"><a href="#1-Docker中国区官方镜像简介" class="headerlink" title="1. Docker中国区官方镜像简介"></a><strong>1. Docker中国区官方镜像简介</strong></h3><p>在国内，可以通过registry.docker-cn.com访问官方镜像库，目前该镜像库只包含流行的公有镜像，而私有镜像仍需要从美国镜像库中拉取。</p>
+<h3 id="2-配置Docker中国区官方镜像"><a href="#2-配置Docker中国区官方镜像" class="headerlink" title="2. 配置Docker中国区官方镜像"></a><strong>2. 配置Docker中国区官方镜像</strong></h3><p>使用vi修改 /etc/docker/daemon.json 文件并添加上”registry-mirrors”: [“<a href="https://registry.docker-cn.com/" target="_blank" rel="noopener">https://registry.docker-cn.com</a>“]，如下：</p>
+<blockquote>
+<p>vi /etc/docker/daemon.json { “registry-mirrors”: [“<a href="https://registry.docker-cn.com/" target="_blank" rel="noopener">https://registry.docker-cn.com</a>“] }</p>
+</blockquote>
+<h3 id="3-重启Docker"><a href="#3-重启Docker" class="headerlink" title="3. 重启Docker"></a><strong>3. 重启Docker</strong></h3><p>配置完之后执行下面的命令，以使docker的配置文件生效</p>
+<blockquote>
+<p>systemctl daemon-reload systemctl restart docker</p>
+</blockquote>
+<h2 id="4-测试配置的结果"><a href="#4-测试配置的结果" class="headerlink" title="4. 测试配置的结果"></a><strong>4. 测试配置的结果</strong></h2><h3 id="1-busybox简介"><a href="#1-busybox简介" class="headerlink" title="1. busybox简介"></a><strong>1. busybox简介</strong></h3><p>我们可以通过从镜像仓库中拉去镜像的方式来测试镜像地址是否配置成功，比如说我们可以尝试去拉取一个简单的busybox镜像来进行相应的测试。 busybox是一个集成了一百多个最常用linux命令和工具的软件,同时它也是一个最小的Linux系统，它提供了该系统的主要功能，例如grep、find、mount以及telnet等但不包含一些与GNU相关的功能和选项。</p>
+<h3 id="2-拉取busybox"><a href="#2-拉取busybox" class="headerlink" title="2. 拉取busybox"></a><strong>2. 拉取busybox</strong></h3><p>执行指令如下：</p>
+<blockquote>
+<p>docker pull busybox</p>
+</blockquote>
+<p>当看到下面的信息时，说明镜像已经拉取成功</p>
+<blockquote>
+<p>Using default tag: latest Trying to pull repository docker.io/library/busybox … latest: Pulling from docker.io/library/busybox 9e87eff13613: Pull complete Digest: sha256:2605a2c4875ce5eb27a9f7403263190cd1af31e48a2044d400320548356251c4</p>
+</blockquote>
+<h3 id="3-测试busybox"><a href="#3-测试busybox" class="headerlink" title="3. 测试busybox"></a><strong>3. 测试busybox</strong></h3><p>测试拉取的busybox镜像</p>
+<blockquote>
+<p>[root@localhost ~]# docker run busybox echo “hello world” hello world</p>
+</blockquote>
+<p>当我们看到控制台打印出的“hello world”时，这就说明我们的busybox已经测试成功了。   原文链接：<a href="http://blog.csdn.net/zzy1078689276/article/details/77371782" target="_blank" rel="noopener">http://blog.csdn.net/zzy1078689276/article/details/77371782</a></p>
+</div></article></div></main><footer><div class="paginator"><a href="/2017/12/11/mount unknown filesystem type 'vboxsf'/" class="prev">PREV</a><a href="/2017/12/05/win10 专业版安装docker/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2019 <a href="http://yoursite.com">John Doe</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>

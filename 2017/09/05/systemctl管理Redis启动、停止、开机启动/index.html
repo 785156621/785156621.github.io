@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> systemctl管理Redis启动、停止、开机启动 · Hexo</title><meta name="description" content="systemctl管理Redis启动、停止、开机启动 - John Doe"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Hexo"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">systemctl管理Redis启动、停止、开机启动</h1><div class="post-info">Sep 5, 2017</div><div class="post-content"><h1 id="1-创建服务"><a href="#1-创建服务" class="headerlink" title="1. 创建服务"></a>1. 创建服务</h1><p>用service来管理服务的时候，是在<code>/etc/init.d/</code>目录中创建一个脚本文件，来管理服务的启动和停止，在systemctl中，也类似，文件目录有所不同，在<code>/lib/systemd/system</code>目录下创建一个脚本文件redis.service，里面的内容如下：</p>
+<pre><code>[Unit]
+Description=Redis
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/redis-server /usr/local/redis/redis.conf  --daemonize no
+ExecStop=/usr/local/bin/redis-cli -h 127.0.0.1 -p 6379 shutdown
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><blockquote>
+<p>更详细的service文件说明请访问：<a href="http://www.csdn.net/article/2015-02-27/2824034" target="_blank" rel="noopener">这里</a></p>
+</blockquote>
+<h2 id="2-创建软链接"><a href="#2-创建软链接" class="headerlink" title="2. 创建软链接"></a>2. 创建软链接</h2><p>创建软链接是为了下一步系统初始化时自动启动服务</p>
+<pre><code>ln -s /lib/systemd/system/redis.service /etc/systemd/system/multi-user.target.wants/redis.service
+</code></pre><blockquote>
+<p>创建软链接就好比Windows下的快捷方式 ln -s 是创建软链接 ln -s 原文件 目标文件（快捷方式的决定地址）</p>
+</blockquote>
+<p>如果创建软连接的时候出现异常，不要担心，看看<code>/etc/systemd/system/multi-user.target.wants/</code> 目录是否正常创建软链接为准，有时候报错只是提示一下，其实成功了。</p>
+<pre><code>$ ll /etc/systemd/system/multi-user.target.wants/
+total 8
+drwxr-xr-x  2 root root 4096 Mar 30 15:46 ./
+drwxr-xr-x 13 root root 4096 Mar 13 14:18 ../
+lrwxrwxrwx  1 root root   31 Nov 23 14:43 redis.service -&gt; /lib/systemd/system/redis.service
+...略...
+</code></pre><h2 id="3-刷新配置"><a href="#3-刷新配置" class="headerlink" title="3. 刷新配置"></a>3. 刷新配置</h2><p>刚刚配置的服务需要让systemctl能识别，就必须刷新配置</p>
+<pre><code>$ systemctl daemon-reload
+</code></pre><p>如果没有权限可以使用sudo</p>
+<pre><code>$ sudo systemctl daemon-reload
+</code></pre><hr>
+<h2 id="4-启动、重启、停止"><a href="#4-启动、重启、停止" class="headerlink" title="4. 启动、重启、停止"></a>4. 启动、重启、停止</h2><p>启动redis</p>
+<pre><code>$ systemctl start redis
+</code></pre><p>重启redis</p>
+<pre><code>$ systemctl restart redis
+</code></pre><p>停止redis</p>
+<pre><code>$ systemctl stop redis
+</code></pre><h2 id="5-开机自启动"><a href="#5-开机自启动" class="headerlink" title="5. 开机自启动"></a>5. 开机自启动</h2><p>redis服务加入开机启动</p>
+<pre><code>$ systemctl enable redis
+</code></pre><p>禁止开机启动</p>
+<pre><code>$ systemctl disable redis
+</code></pre><h2 id="6-查看状态"><a href="#6-查看状态" class="headerlink" title="6. 查看状态"></a>6. 查看状态</h2><p>查看状态</p>
+<pre><code>$ systemctl status redis
+
+
+原文链接：http://blog.csdn.net/chwshuang/article/details/68489968
+</code></pre></div></article></div></main><footer><div class="paginator"><a href="/2017/09/05/Redis开启远程访问/" class="prev">PREV</a><a href="/2017/08/23/PHP上传文件详解 错误提示/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2019 <a href="http://yoursite.com">John Doe</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>

@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-01-02T03:29:58.760Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/01/02/hello-world/"/>
+    <id>http://yoursite.com/2019/01/02/hello-world/</id>
+    <published>2019-01-02T03:29:58.760Z</published>
+    <updated>2019-01-02T03:29:58.760Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>局域网内访问Homestead环境</title>
+    <link href="http://yoursite.com/2017/12/13/%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85%E8%AE%BF%E9%97%AEHomestead%E7%8E%AF%E5%A2%83/"/>
+    <id>http://yoursite.com/2017/12/13/局域网内访问Homestead环境/</id>
+    <published>2017-12-13T06:00:40.000Z</published>
+    <updated>2019-01-02T03:46:44.672Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在使用laravel开发app接口，本地机器安装了Homestead，app想通过局域网访问我这台程序接口，那如何设置可以让局域网访问呢？ 1.查看局域网ip地址 <img src="http://gdmizi.com/wp-content/uploads/2017/12/QQ截图20171213135705.png" alt=""> 可以看到我机器ip 192.168.0.18 2.找到Homestead里的Homestead.yaml添加如下配置 networks: - type: “public_network” ip: “192.168.0.25”         //这里是重点，配置成局域网同ip段的 bridge: “en1: Wi-Fi (AirPort)” 参考官方网站文档说明如下： <img src="http://gdmizi.com/wp-content/uploads/2017/12/QQ截图20171213135902.png" alt=""> 3.重启vagrant <code>vagrant reload</code>   相关链接：<a href="http://www.bcty365.com/content-153-5910-1.html" target="_blank" rel="noopener">http://www.bcty365.com/content-153-5910-1.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近在使用laravel开发app接口，本地机器安装了Homestead，app想通过局域网访问我这台程序接口，那如何设置可以让局域网访问呢？ 1.查看局域网ip地址 &lt;img src=&quot;http://gdmizi.com/wp-content/uploads/2017/1
+      
+    
+    </summary>
+    
+      <category term="Laravel" scheme="http://yoursite.com/categories/Laravel/"/>
+    
+      <category term="PHP" scheme="http://yoursite.com/categories/Laravel/PHP/"/>
+    
+    
+      <category term="Laravel" scheme="http://yoursite.com/tags/Laravel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vagrant 删除同名box</title>
+    <link href="http://yoursite.com/2017/12/12/Vagrant%20%E5%88%A0%E9%99%A4%E5%90%8C%E5%90%8Dbox/"/>
+    <id>http://yoursite.com/2017/12/12/Vagrant 删除同名box/</id>
+    <published>2017-12-12T07:44:37.000Z</published>
+    <updated>2019-01-02T03:46:44.671Z</updated>
+    
+    <content type="html"><![CDATA[<p>box多版本共存的情况 如果box升级过，那么在box list中会出现两个同名，但版本不同的镜像。如：</p><blockquote><p>C:\Users\lanlin&gt;vagrant box list centos/7 (virtualbox, 1710.01) laravel/homestead (virtualbox, 0) laravel/homestead (virtualbox, 4.0.0)</p></blockquote><p>使用该镜像创建虚拟机的时候，默认会使用高版本的box。 如果想使用低版本，需要修改Vagrantfile,指定box-version 在config.vm.box=xxx下一行，如上面的例子中，在“config.vm.box = “laravel/homestead””后面增加一行配置信息：config.vm.box_version = “4.0.0” 同样，如果想删除一个box，如下操作会失败：</p><blockquote><p>$ vagrant remove laravel-homestead You requested to remove the box ‘laravel/homestead’ with provider ‘virtualbox’. This box has multiple versions. You must explicitly specify which version you want to remove with the <code>--box-version</code> flag or specify the <code>--all</code> flag to remove all versions. The available versions for this box are: <em> 0 </em> 4.0.0</p></blockquote><p>这时有两个选择： <code>- vagrant box remove laravel-homestead --all</code> 删除所有同名镜像 <code>- vagrant box remove laravel-homestead --box-version=4.0.0</code> 删除指定版本的镜像</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;box多版本共存的情况 如果box升级过，那么在box list中会出现两个同名，但版本不同的镜像。如：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;C:\Users\lanlin&amp;gt;vagrant box list centos/7 (virtualbox, 1710.0
+      
+    
+    </summary>
+    
+      <category term="Vagrant" scheme="http://yoursite.com/categories/Vagrant/"/>
+    
+    
+      <category term="Vagrant" scheme="http://yoursite.com/tags/Vagrant/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>手把手教你Homestead安装，并填坑</title>
+    <link href="http://yoursite.com/2017/12/12/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0Homestead%E5%AE%89%E8%A3%85%EF%BC%8C%E5%B9%B6%E5%A1%AB%E5%9D%91/"/>
+    <id>http://yoursite.com/2017/12/12/手把手教你Homestead安装，并填坑/</id>
+    <published>2017-12-12T06:31:33.000Z</published>
+    <updated>2019-01-02T03:46:44.671Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>话说作为laravel的开发者，你听说Homestead应该很久了，可是官方推荐的开发环境在国内为什么鲜有人用？我这几天试着安装了一下，发现官方的安装教程实在存在着太多的大坑，尤其让刚刚入道的开发者望而却步，在本文我试着手把手教大家填上这个坑.</strong></p><h2 id="第一步-安装必须的软件"><a href="#第一步-安装必须的软件" class="headerlink" title="第一步 安装必须的软件"></a>第一步 安装必须的软件</h2><p>1.安装vagrant，<a href="https://link.jianshu.com?t=https://www.vagrantup.com/downloads.html" target="_blank" rel="noopener">点此进入</a>下载页，vagrant属于跨平台应用，我的系统是win10。关于<a href="https://link.jianshu.com?t=http://ninghao.net/blog/1566" target="_blank" rel="noopener">vagrant教程</a>，可以自己看一下，百度一下遍地是。不看也没关系，本文大概只用到其中的几个命令。 2.安装Virtualbox，当然你安装Vmware或parallels（OX系统）也可以，但后面下载的box要注意对应，虚拟机对应的版本不同。</p><h2 id="第二步-导入box"><a href="#第二步-导入box" class="headerlink" title="第二步 导入box"></a>第二步 导入box</h2><blockquote><p>vagrant box add laravel/homestead</p></blockquote><p><strong>第一个坑：</strong>原本只要如上的命令即可，但由于国内众所周知的网络原因，我们不得不考虑先下载好你需要的box再来添加。 首先在<a href="https://link.jianshu.com?t=https://atlas.hashicorp.com/laravel/boxes/homestead/" target="_blank" rel="noopener">hashicorp</a>中找到合适的版本,再在链接后加上”版本号/providers/虚拟机类型.box”即可获得下载链接. 如我们要下载最新的版本号为1.0.1的virtualbox版的box文件,链接即为:<a href="https://link.jianshu.com?t=https://atlas.hashicorp.com/laravel/boxes/homestead/versions/0.4.1/providers/virtualbox.box" target="_blank" rel="noopener">https://atlas.hashicorp.com/laravel/boxes/homestead/versions/1.0.1/providers/virtualbox.box</a> 由于国外链接下载太慢，这里提供了百度网盘链接（<strong><em>已更新到4.0.0</em></strong>）： 链接：<a href="https://pan.baidu.com/s/1c2trJhA" target="_blank" rel="noopener">https://pan.baidu.com/s/1c2trJhA</a> 密码：52ut 不建议采用迅雷离线下载，据说会导致下载的文件损坏！ 接下来我新建了一个文件夹名为homestead，然后我将下好的box重命名为homestead.box放入，然后在此文件夹内运行如下命令（这里是按照一些普通的教程来添加，这时候挖了一个坑，后面填上）。</p><blockquote><p>vagrant box add laravel/homestead homestead.box</p></blockquote><p>接着运行</p><blockquote><p>vagrant box list</p></blockquote><p><img src="//upload-images.jianshu.io/upload_images/943143-d969ac03ec21a352.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/301" alt=""></p><p>vagrant box list</p><p>发现这个box已经添加进来就ok了。</p><h2 id="第三步-下载官方homestead配置"><a href="#第三步-下载官方homestead配置" class="headerlink" title="第三步 下载官方homestead配置"></a>第三步 下载官方homestead配置</h2><p>1）回到用户Home目录，从git上复制一份文件。失败了删除Homestead文件夹再试。 成功后，将会放在：”C:\Users\&lt;用户名&gt;\“ 目录下面，我这里是：C:\Users\huang 依次输入：</p><blockquote><p>cd ~ git clone <a href="https://github.com/laravel/homestead.git" target="_blank" rel="noopener">https://github.com/laravel/homestead.git</a> Homestead</p></blockquote><p>2）初始化homestead配置文件，执行bash init.sh将会在用户Home目录下生成.Homestead.yaml文件。 依次输入：</p><blockquote><p>cd ~/Homestead bash init.sh</p></blockquote><p><img src="http://gdmizi.com/wp-content/uploads/2017/12/QQ截图20171212142555-300x256.png" alt=""></p><h2 id="第四步-配置Homestead-yaml"><a href="#第四步-配置Homestead-yaml" class="headerlink" title="第四步 配置Homestead.yaml"></a>第四步 配置Homestead.yaml</h2><p><strong>设置 IP及Provider</strong> Homestead.yaml文件中的provider键表示使用哪个 Vagrant 提供者：virtualbox、vmware_fushion或者vmware_workstation，你可以将其设置为自己喜欢的提供者： ip: “192.168.10.10” provider: virtualbox <strong>配置共享文件夹</strong> Homestead.yaml文件中的folders属性列出了所有主机和 Homestead 虚拟机共享的文件夹，一旦这些目录中的文件有了修改，将会在本地和 Homestead 虚拟机之间保持同步，如果有需要的话，你可以配置多个共享文件夹（一般一个就够了）：</p><blockquote><p>folders: - map: D:/homestead/code  #（这是我本地的文件夹） to: /home/vagrant/Code</p></blockquote><p><strong>配置 Nginx 站点</strong> 对 Nginx 不熟？没问题，通过sites属性你可以方便地将“域名”映射到 Homestead 虚拟机的指定目录，Homestead.yaml中默认已经配置了一个示例站点。和共享文件夹一样，你可以配置多个站点：</p><blockquote><p>sites: - map: liang.app to: /home/vagrant/Code/Laravel/public</p></blockquote><p><strong>Hosts文件</strong> 不要忘记把 Nginx 站点配置中的域名添加到本地机器上的hosts文件中，该文件会将对本地域名的请求重定向到 Homestead 虚拟机，在 Mac 或 Linux上，该文件位于/etc/hosts，在 Windows 上，位于C:\Windows\System32\drivers\etc\hosts，添加方式如下： 192.168.10.10 liang.app 确保 IP 地址和你的Homestead.yaml文件中列出的一致，一旦你将域名放置到hosts文件，就可以在浏览器中通过该域名访问站点了： <a href="http://liang.app" target="_blank" rel="noopener">http://liang.app</a></p><h2 id="第五步-启动vagrant"><a href="#第五步-启动vagrant" class="headerlink" title="第五步 启动vagrant"></a>第五步 启动vagrant</h2><p>在 Homestead 目录下运行vagrant up命令，Vagrant 将会启动虚拟机并自动配置共享文件夹以及 Nginx 站点。官方文档对此描述的如此这般简单，其实这里遇到了<strong>第二个大坑</strong> 我们输入vagrant up看会发生什么？一堆的错误提示！！！！</p><p><img src="//upload-images.jianshu.io/upload_images/943143-00d73ba10d7e8f8e.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p><p>我们根据提示，貌似是ssh的key没有生成，于是我们要运行如下命令，这个命令可以在git bash下生成，也可以在cmder等命令行工具完成，但在win下的cmd却无法执行。win 下可考虑powershell。</p><blockquote><p>ssh-keygen</p></blockquote><p>好了，我们欢喜的以为，我们可以顺利运行了。vagrant up。我擦居然提示这个box没有，需要安装。出现了<strong>第三个坑</strong></p><p><img src="//upload-images.jianshu.io/upload_images/943143-567860dc9615e19a.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p><p>再次出现该box不存在</p><p>导致该坑的原因，我们看之前的vagrant box list，里面显示laravel/homestead (virtualbox, 0)，而homestead要求Box Version: &gt;= 1.0.0，这就不奇怪了。但我们明明下的是这个1.0.1版本啊。</p><p><img src="//upload-images.jianshu.io/upload_images/943143-d969ac03ec21a352.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/301" alt=""></p><p>vagrant box list</p><h4 id="我们有两种方式修复这个大坑"><a href="#我们有两种方式修复这个大坑" class="headerlink" title="我们有两种方式修复这个大坑"></a>我们有两种方式修复这个大坑</h4><h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><p>  修改homestead/scripts/homestead.rb的这个文件，将其中的&gt;= 1.0.0改为&lt; 1.0.0即可满足要求。但我并不推荐这种方式，因为实质对满足要求进行了篡改。</p><p><img src="//upload-images.jianshu.io/upload_images/943143-7874000b3cb82cdc.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/552" alt=""></p><p>homestead.rb</p><h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h4><p>我们在homestead下新建一个名为homestead.json的一个json配置文件</p><blockquote><p>{ “name”: “laravel/homestead”, “versions”: [{ “version”: “1.0.1”, “providers”: [{ “name”: “virtualbox”, “url”: “F:/Vagrant/homestead/homestead.box” }] }] }</p></blockquote><p>其中url是下载的homestead.box的路径 看懂了吗？接着我们运行这个命令</p><blockquote><p>vagrant box add homestead.json</p></blockquote><p><img src="//upload-images.jianshu.io/upload_images/943143-8eb820d308810180.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt=""></p><p>已经添box成功</p><p>真的不容易啊，添加成功了 我们接着运行vagrant up试试</p><p><img src="//upload-images.jianshu.io/upload_images/943143-021dccf8f037a53c.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/663" alt=""></p><p>成功运行</p><p>经过这样一番折腾终于成功运行了。</p><h2 id="第六步-登录vagrant并安装laravel"><a href="#第六步-登录vagrant并安装laravel" class="headerlink" title="第六步 登录vagrant并安装laravel"></a>第六步 登录vagrant并安装laravel</h2><p>这一步应该是我们的最后一步了，我们期待目标通过本地能够访问到你用vagrant搭建起来的laravel。我们通过vagrant ssh命令即可顺利登录我们的系统了。 由于设置上我们的vagrant虚拟机Code目录和我们的本地主机D:/homestead/Code是同一个目录，因此，我们先移步到该目录。 <strong>第四个坑</strong>出现了，我们一般是通过composer来进行安装，但出于GFW原因，我们不得不用<a href="https://link.jianshu.com?t=http://pkg.phpcomposer.com/" target="_blank" rel="noopener">中国镜像</a>来安装。vagrant虚拟机中运行如下命令</p><blockquote><p>composer config -g repo.packagist composer <a href="https://packagist.phpcomposer.com" target="_blank" rel="noopener">https://packagist.phpcomposer.com</a></p></blockquote><p>接着我们通过composer来安装一个5.2版本 composer create-project laravel/laravel=5.2.* –prefer-dist OK，访问liang.app，出现了Laravel 5的欢迎界面，大功告成。 <strong>补坑：</strong>对于部分用户，可能出现autoload或boostrap不存在，说明依赖安装不完整，可以在laravel目录下运行如下命令来解决。</p><blockquote><p>composer update–no-scripts</p></blockquote><p>由于直接git clone 官方在github上的东西可能造成与本box版本不一致，建议解决方案参考评论中beyond__devil所用的方法，将版本回滚。或者直接下最新的box或等我的box更新。  </p><p>原文链接：<a href="http://www.jianshu.com/p/ae9d1261bbd8" target="_blank" rel="noopener">http://www.jianshu.com/p/ae9d1261bbd8</a> 相关链接：<a href="http://laravelacademy.org/post/7658.html" target="_blank" rel="noopener">http://laravelacademy.org/post/7658.html</a> <a href="https://jingyan.baidu.com/article/48a42057fe2195a924250433.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/48a42057fe2195a924250433.html</a> <a href="https://segmentfault.com/q/1010000004354810/a-1020000004363813" target="_blank" rel="noopener">https://segmentfault.com/q/1010000004354810/a-1020000004363813</a> 后记：经历了各种坑百度了各种方法，最终终于安装成功。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;话说作为laravel的开发者，你听说Homestead应该很久了，可是官方推荐的开发环境在国内为什么鲜有人用？我这几天试着安装了一下，发现官方的安装教程实在存在着太多的大坑，尤其让刚刚入道的开发者望而却步，在本文我试着手把手教大家填上这个坑.&lt;/stron
+      
+    
+    </summary>
+    
+      <category term="Laravel" scheme="http://yoursite.com/categories/Laravel/"/>
+    
+      <category term="PHP" scheme="http://yoursite.com/categories/Laravel/PHP/"/>
+    
+      <category term="Vagrant" scheme="http://yoursite.com/categories/Laravel/PHP/Vagrant/"/>
+    
+    
+      <category term="Laravel" scheme="http://yoursite.com/tags/Laravel/"/>
+    
+      <category term="Vagrant" scheme="http://yoursite.com/tags/Vagrant/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在windows下进行linux开发：利用Vagrant+virtualbox</title>
+    <link href="http://yoursite.com/2017/12/12/%E5%9C%A8windows%E4%B8%8B%E8%BF%9B%E8%A1%8Clinux%E5%BC%80%E5%8F%91%EF%BC%9A%E5%88%A9%E7%94%A8Vagrant+virtualbox/"/>
+    <id>http://yoursite.com/2017/12/12/在windows下进行linux开发：利用Vagrant+virtualbox/</id>
+    <published>2017-12-12T02:07:17.000Z</published>
+    <updated>2019-01-02T03:46:44.671Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1，介绍Vagrant"><a href="#1，介绍Vagrant" class="headerlink" title="1，介绍Vagrant"></a>1，介绍Vagrant</h3><p>我们做web开发的时候经常要安装各种本地测试环境，比如apache,php,mysql,redis等等。出于个人使用习惯，可能我们还是比较习惯用windows。虽然说在windows下搭建各种开发环境是可行的，各大开发环境都有windows版本。然而在windows下配置有时候会显得繁琐，并且还会导致开发环境（windows）和生产环境（lunix）不一致。 能不能在windows下也像linux那样开发？也许你想到了，用虚拟机。用虚拟机装个linux系统就好了。装完linux系统就设置共享目录，设置网络端口映射，等等。好像也有那么点繁琐。 还有，假如我们是一个团队进行开发，那么每个人的电脑上都要装个虚拟机+ linux系统+各种运行环境。手动设置麻烦不说，大家的开发环境不太一致（可能你装了apcahe我装了nginx等），也是头疼。能不能把各种设置都自动化，并且保持整个团队的开发环境一致呢？ Vagrant就是为了解决这个问题而生的。它使用开源 VirtualBox 作为虚拟化支持，可以轻松的跨平台部署。</p><h3 id="2，下载"><a href="#2，下载" class="headerlink" title="2，下载"></a>2，下载</h3><p>下载VirtualBox：<a href="http://download.virtualbox.org/virtualbox/5.2.2/VirtualBox-5.2.2-119230-Win.exe" target="_blank" rel="noopener">http://download.virtualbox.org/virtualbox/5.2.2/VirtualBox-5.2.2-119230-Win.exe</a> 上面给出的是5.2.2版本的下载链接。要下载其他版本请访问官网<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">https://www.virtualbox.org/wiki/Downloads</a> 下载Vagrant：<a href="https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.msi?_ga=2.92704287.362862624.1512962307-1615333745.1510288662" target="_blank" rel="noopener">https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.msi?_ga=2.92704287.362862624.1512962307-1615333745.1510288662</a> 上面给出的是2.0.1版本win64位的下载链接。要下载其他版本请访问官网 <a href="http://www.vagrantup.com/downloads.html" target="_blank" rel="noopener">http://www.vagrantup.com/downloads.html</a> 下载虚拟镜像： <a href="https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.0.0/centos-6.6-x86_64.box" target="_blank" rel="noopener">https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.0.0/centos-6.6-x86_64.box</a> 上面给出的是centos-6.6镜像下载链接，要下载其他镜像请访问官网</p><ul><li>官方仓库：<a href="https://atlas.hashicorp.com/boxes/search" target="_blank" rel="noopener">https://atlas.hashicorp.com/boxes/search</a></li><li>官方镜像：<a href="https://vagrantcloud.com/boxes/search" target="_blank" rel="noopener">https://vagrantcloud.com/boxes/search</a></li><li>第三方仓库：<a href="http://www.vagrantbox.es/" target="_blank" rel="noopener">http://www.vagrantbox.es/</a></li></ul><h3 id="3，安装"><a href="#3，安装" class="headerlink" title="3，安装"></a>3，安装</h3><p>下载好上面的软件包后，先安装VirtualBox,然后安装Vagrant。都是双击即可安装的，所以没什么好介绍。下面介绍下怎么把镜像导入。 先新建一个工作目录 比如我新建了D:VagrantWorkcentos-6.6-x86_64 打开cmd命令提示符，进入新目录，以我上面的目录为例，输入</p><pre><code>D:cd D:VagrantWorkcentos-6.6-x86_64</code></pre><p>然后输入命令初始化 <code>vagrant init centos6.6</code> 把下载的centos-6.6-x86_64.box复制到本目录D:VagrantWorkcentos-6.6-x86_64下，执行 <code>vagrant box add centos6.6 centos-6.6-x86_64.box</code> 检查是否导入成功 <code>vagrant box list</code></p><h3 id="4，配置"><a href="#4，配置" class="headerlink" title="4，配置"></a>4，配置</h3><p>用文本编辑器打开D:VagrantWorkcentos-6.6-x86_64目录下的Vagrantfile文件便可以进行一些常用配置。 下面列举出几个常用的配置。要用到其他配置请访问官网文档或者百度谷歌一下。 1，端口映射 <code>config.vm.network :forwarded_port, guest: 80, host: 8080</code> 把上面这句代码前面的#号去掉。它表示映射本机的8080端口到虚拟机的80端口 2，如果需要自己自由的访问虚拟机，但是别人不需要访问虚拟机，可以使用private_network，并为虚拟机设置IP。 <code>config.vm.network :private_network, ip: 192.168.33.10</code> 把上面这句代码前面的#号去掉即可 3，目录映射 <code>config.vm.synced_folder &quot;D:/www&quot;, &quot;/var/www/html&quot;</code> 如果启用上面的命令，表示把本机的data目录共享到虚拟机里的/var/www目录</p><h3 id="5，启动"><a href="#5，启动" class="headerlink" title="5，启动"></a>5，启动</h3><p>进入目录D:VagrantWorkcentos-6.6-x86_64后执行命令 <code>vagrant up</code> 虚拟机启动之后则可以通过 vagrant ssh 联入虚拟机进行进一步的环境配置，或者软件安装相关的工作，在Windows系统下，并不能直接通过 vagrant ssh 连到虚拟机，需要使用 Putty，Xshell 等第三方工具进行连接。连接地址127.0.0.1，端口2222。登录的帐号root的密码为 vagrant</p><h3 id="6，导出"><a href="#6，导出" class="headerlink" title="6，导出"></a>6，导出</h3><p>在cmd里进行工作目录后，执行下面命令 <code>vagrant package --output centos-6.6.box</code> 完成后会在当前目录就会生成package.box，之后新建虚拟机则可使用这个box。如果事先在你的虚拟机里建立好了各种开发环境，那么你直接把这个box给你的团队其他成员安装，这样就可以省去一台台电脑部署的时间，还可以保持开发环境一致。很方便有木有。</p><h3 id="7，其他命令"><a href="#7，其他命令" class="headerlink" title="7，其他命令"></a>7，其他命令</h3><p>下面列举出一些常用的cmd操作命令 vagrant up （启动虚拟机） vagrant halt （关闭虚拟机——对应就是关机） vagrant suspend （暂停虚拟机——只是暂停，虚拟机内存等信息将以状态文件的方式保存在本地，可以执行恢复操作后继续使用） vagrant resume （恢复虚拟机 —— 与前面的暂停相对应） vagrant box remove centos6.6 （移除box，其中centos6.6是box名） vagrant destroy （删除虚拟机，删除后在当前虚拟机所做进行的除开Vagrantfile中的配置都不会保留）</p><h3 id="8，常见问题"><a href="#8，常见问题" class="headerlink" title="8，常见问题"></a>8，常见问题</h3><p>执行vagrant up时报以下错误： <img src="http://gdmizi.com/wp-content/uploads/2017/12/QQ图片20171211143055.png" alt=""> 解决方法： <code>vagrant plugin install vagrant-vbguest</code> <code>vagrant reload</code>   相关链接：<a href="http://blog.star7th.com/2015/06/1538.html" target="_blank" rel="noopener">http://blog.star7th.com/2015/06/1538.html</a> <a href="http://blog.csdn.net/yjk13703623757/article/details/70040797" target="_blank" rel="noopener">http://blog.csdn.net/yjk13703623757/article/details/70040797</a> <a href="http://blog.csdn.net/demon3182/article/details/51436032" target="_blank" rel="noopener">http://blog.csdn.net/demon3182/article/details/51436032</a> <a href="http://www.jb51.net/article/121766.htm" target="_blank" rel="noopener">http://www.jb51.net/article/121766.htm</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1，介绍Vagrant&quot;&gt;&lt;a href=&quot;#1，介绍Vagrant&quot; class=&quot;headerlink&quot; title=&quot;1，介绍Vagrant&quot;&gt;&lt;/a&gt;1，介绍Vagrant&lt;/h3&gt;&lt;p&gt;我们做web开发的时候经常要安装各种本地测试环境，比如apache,
+      
+    
+    </summary>
+    
+      <category term="Vagrant" scheme="http://yoursite.com/categories/Vagrant/"/>
+    
+    
+      <category term="Vagrant" scheme="http://yoursite.com/tags/Vagrant/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mount: unknown filesystem type &#39;vboxsf&#39;</title>
+    <link href="http://yoursite.com/2017/12/11/mount%20unknown%20filesystem%20type%20&#39;vboxsf&#39;/"/>
+    <id>http://yoursite.com/2017/12/11/mount unknown filesystem type &#39;vboxsf&#39;/</id>
+    <published>2017-12-11T06:35:04.000Z</published>
+    <updated>2019-01-02T03:46:44.670Z</updated>
+    
+    <content type="html"><![CDATA[<p>vagrant无法与主机共享文件夹? <img src="http://gdmizi.com/wp-content/uploads/2017/12/QQ图片20171211143055.png" alt=""> 这个问题解决方案已经知道。其实很简单，就是缺一个插件，装上就ok <code>vagrant plugin install vagrant-vbguest</code> 然后  <code>vagrant reload</code>  问题解决。   相关链接：<a href="http://blog.csdn.net/demon3182/article/details/51436032" target="_blank" rel="noopener">http://blog.csdn.net/demon3182/article/details/51436032</a> <a href="http://www.cnblogs.com/HansBug/p/7403306.html" target="_blank" rel="noopener">http://www.cnblogs.com/HansBug/p/7403306.html</a> <a href="http://www.jb51.net/article/121766.htm" target="_blank" rel="noopener">http://www.jb51.net/article/121766.htm</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;vagrant无法与主机共享文件夹? &lt;img src=&quot;http://gdmizi.com/wp-content/uploads/2017/12/QQ图片20171211143055.png&quot; alt=&quot;&quot;&gt; 这个问题解决方案已经知道。其实很简单，就是缺一个插件，装上就o
+      
+    
+    </summary>
+    
+      <category term="Vagrant" scheme="http://yoursite.com/categories/Vagrant/"/>
+    
+    
+      <category term="Vagrant" scheme="http://yoursite.com/tags/Vagrant/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker中配置国内镜像</title>
+    <link href="http://yoursite.com/2017/12/08/Docker%E4%B8%AD%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/"/>
+    <id>http://yoursite.com/2017/12/08/Docker中配置国内镜像/</id>
+    <published>2017-12-08T06:43:24.000Z</published>
+    <updated>2019-01-02T03:46:44.670Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-为什么要为docker配置国内镜像"><a href="#1-为什么要为docker配置国内镜像" class="headerlink" title="1. 为什么要为docker配置国内镜像"></a><strong>1. 为什么要为docker配置国内镜像</strong></h2><p>在正常情况下，docker有一个默认连接的国外官方镜像，在国外的网友访问该官方镜像自然不成问题，但是国内毕竟不是国外，由于国情不同，中国的网络访问国外官方镜像网速一向很慢，而且往往还会遭遇断网的窘境，所以说我们要想正常使用docker的镜像，那么我们就不得不配置相应的国内镜像。</p><h2 id="2-可以使用的国内镜像有哪些"><a href="#2-可以使用的国内镜像有哪些" class="headerlink" title="2. 可以使用的国内镜像有哪些"></a><strong>2. 可以使用的国内镜像有哪些</strong></h2><p>Docker可以配置的国内镜像有很多可供选择，比如说：阿里云，网易蜂巢，DaoCloud，Docker中国区官方镜像等，这些都是可以提供给大家随意选择的不错的镜像仓库。</p><h2 id="3-配置Docker中国区官方镜像"><a href="#3-配置Docker中国区官方镜像" class="headerlink" title="3. 配置Docker中国区官方镜像"></a><strong>3. 配置Docker中国区官方镜像</strong></h2><h3 id="1-Docker中国区官方镜像简介"><a href="#1-Docker中国区官方镜像简介" class="headerlink" title="1. Docker中国区官方镜像简介"></a><strong>1. Docker中国区官方镜像简介</strong></h3><p>在国内，可以通过registry.docker-cn.com访问官方镜像库，目前该镜像库只包含流行的公有镜像，而私有镜像仍需要从美国镜像库中拉取。</p><h3 id="2-配置Docker中国区官方镜像"><a href="#2-配置Docker中国区官方镜像" class="headerlink" title="2. 配置Docker中国区官方镜像"></a><strong>2. 配置Docker中国区官方镜像</strong></h3><p>使用vi修改 /etc/docker/daemon.json 文件并添加上”registry-mirrors”: [“<a href="https://registry.docker-cn.com/" target="_blank" rel="noopener">https://registry.docker-cn.com</a>“]，如下：</p><blockquote><p>vi /etc/docker/daemon.json { “registry-mirrors”: [“<a href="https://registry.docker-cn.com/" target="_blank" rel="noopener">https://registry.docker-cn.com</a>“] }</p></blockquote><h3 id="3-重启Docker"><a href="#3-重启Docker" class="headerlink" title="3. 重启Docker"></a><strong>3. 重启Docker</strong></h3><p>配置完之后执行下面的命令，以使docker的配置文件生效</p><blockquote><p>systemctl daemon-reload systemctl restart docker</p></blockquote><h2 id="4-测试配置的结果"><a href="#4-测试配置的结果" class="headerlink" title="4. 测试配置的结果"></a><strong>4. 测试配置的结果</strong></h2><h3 id="1-busybox简介"><a href="#1-busybox简介" class="headerlink" title="1. busybox简介"></a><strong>1. busybox简介</strong></h3><p>我们可以通过从镜像仓库中拉去镜像的方式来测试镜像地址是否配置成功，比如说我们可以尝试去拉取一个简单的busybox镜像来进行相应的测试。 busybox是一个集成了一百多个最常用linux命令和工具的软件,同时它也是一个最小的Linux系统，它提供了该系统的主要功能，例如grep、find、mount以及telnet等但不包含一些与GNU相关的功能和选项。</p><h3 id="2-拉取busybox"><a href="#2-拉取busybox" class="headerlink" title="2. 拉取busybox"></a><strong>2. 拉取busybox</strong></h3><p>执行指令如下：</p><blockquote><p>docker pull busybox</p></blockquote><p>当看到下面的信息时，说明镜像已经拉取成功</p><blockquote><p>Using default tag: latest Trying to pull repository docker.io/library/busybox … latest: Pulling from docker.io/library/busybox 9e87eff13613: Pull complete Digest: sha256:2605a2c4875ce5eb27a9f7403263190cd1af31e48a2044d400320548356251c4</p></blockquote><h3 id="3-测试busybox"><a href="#3-测试busybox" class="headerlink" title="3. 测试busybox"></a><strong>3. 测试busybox</strong></h3><p>测试拉取的busybox镜像</p><blockquote><p>[root@localhost ~]# docker run busybox echo “hello world” hello world</p></blockquote><p>当我们看到控制台打印出的“hello world”时，这就说明我们的busybox已经测试成功了。   原文链接：<a href="http://blog.csdn.net/zzy1078689276/article/details/77371782" target="_blank" rel="noopener">http://blog.csdn.net/zzy1078689276/article/details/77371782</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-为什么要为docker配置国内镜像&quot;&gt;&lt;a href=&quot;#1-为什么要为docker配置国内镜像&quot; class=&quot;headerlink&quot; title=&quot;1. 为什么要为docker配置国内镜像&quot;&gt;&lt;/a&gt;&lt;strong&gt;1. 为什么要为docker配置国内镜像
+      
+    
+    </summary>
+    
+      <category term="Docker" scheme="http://yoursite.com/categories/Docker/"/>
+    
+    
+      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>win10 专业版安装docker</title>
+    <link href="http://yoursite.com/2017/12/05/win10%20%E4%B8%93%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85docker/"/>
+    <id>http://yoursite.com/2017/12/05/win10 专业版安装docker/</id>
+    <published>2017-12-05T03:00:01.000Z</published>
+    <updated>2019-01-02T03:46:44.669Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h1><p>Docker最近推出了可以运行在Win10和Mac上的稳定版本，让我们赶紧来体验一下。  </p><h1 id="2-安装准备"><a href="#2-安装准备" class="headerlink" title="2. 安装准备"></a>2. 安装准备</h1><p>需要的条件为： 64bit Windows 10，开启Hyper-V 注意：win10家庭版无法开启Hyper-V，可以升级为专业版  </p><h3 id="2-1-下载Docker-for-Windows"><a href="#2-1-下载Docker-for-Windows" class="headerlink" title="2.1 下载Docker for Windows"></a>2.1 下载Docker for Windows</h3><p>从官网的下面地址可以下载 <a href="https://download.docker.com/win/stable/InstallDocker.msi" target="_blank" rel="noopener">https://download.docker.com/win/stable/InstallDocker.msi</a>  </p><h3 id="2-2-开启win10的Hyper-V"><a href="#2-2-开启win10的Hyper-V" class="headerlink" title="2.2 开启win10的Hyper-V"></a>2.2 开启win10的Hyper-V</h3><p>控制面板 -&gt; 程序 -> 启用或关闭Windows功能 -&gt; 选中Hyper-V <img src="https://images2015.cnblogs.com/blog/868522/201608/868522-20160801102305137-1724102174.png" alt=""> 完成后自动重启  </p><h1 id="3-安装Docker"><a href="#3-安装Docker" class="headerlink" title="3. 安装Docker"></a>3. 安装Docker</h1><p>用刚才下载的安装包安装，安装完成后，启动Docker 如果没有开启Hyper-V，启动Docker的时候会提示开启Hyper-V <img src="https://images2015.cnblogs.com/blog/868522/201608/868522-20160801102654903-565448835.png" alt="">   如果启动的时候，提示内存不足，启动失败，可以在设定中调节VM内存大小 <img src="https://images2015.cnblogs.com/blog/868522/201608/868522-20160801102950856-209620072.png" alt="">  </p><h1 id="4-使用Docker"><a href="#4-使用Docker" class="headerlink" title="4. 使用Docker"></a>4. 使用Docker</h1><h3 id="4-1-查看版本等信息"><a href="#4-1-查看版本等信息" class="headerlink" title="4.1 查看版本等信息"></a>4.1 查看版本等信息</h3><p>docker info</p><p><img src="https://images2015.cnblogs.com/blog/868522/201608/868522-20160801103202747-665891052.png" alt="">  </p><h3 id="4-2-run-hello-world"><a href="#4-2-run-hello-world" class="headerlink" title="4.2 run hello world"></a>4.2 run hello world</h3><p>docker run hello-world</p><p><img src="https://images2015.cnblogs.com/blog/868522/201608/868522-20160801103324872-1203371760.png" alt="">  </p><h3 id="4-3-启动一个Ubuntu容器"><a href="#4-3-启动一个Ubuntu容器" class="headerlink" title="4.3 启动一个Ubuntu容器"></a>4.3 启动一个Ubuntu容器</h3><p>docker run -it ubuntu bash</p><p><img src="https://images2015.cnblogs.com/blog/868522/201608/868522-20160801110626981-801038178.png" alt="">  </p><h3 id="4-4-查看所有容器"><a href="#4-4-查看所有容器" class="headerlink" title="4.4 查看所有容器"></a>4.4 查看所有容器</h3><p>docker ps -a</p><p><img src="https://images2015.cnblogs.com/blog/868522/201608/868522-20160801110938231-76561349.png" alt="">  </p><h3 id="4-5-启动一个nginx容器"><a href="#4-5-启动一个nginx容器" class="headerlink" title="4.5 启动一个nginx容器"></a>4.5 启动一个nginx容器</h3><p>docker run -d -p 81:80 –name webserver nginx</p><p><img src="https://images2015.cnblogs.com/blog/868522/201608/868522-20160801113038715-954002212.png" alt="">   查看运行中的容器</p><p>docker ps</p><p><img src="https://images2015.cnblogs.com/blog/868522/201608/868522-20160801113123028-1841727172.png" alt="">   浏览器访问确认 <img src="https://images2015.cnblogs.com/blog/868522/201608/868522-20160801113225372-1434728896.png" alt="">  </p><h1 id="5-后记"><a href="#5-后记" class="headerlink" title="5. 后记"></a>5. 后记</h1><p>Docker终于有了可以运行在Win10和Mac上的稳定版本，可以尝试在生产环境部署一下。   原文链接：<a href="https://www.cnblogs.com/ee900222/p/docker_4.html" target="_blank" rel="noopener">https://www.cnblogs.com/ee900222/p/docker_4.html</a> 相关链接：<a href="https://jingyan.baidu.com/article/642c9d340202e2644a46f796.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/642c9d340202e2644a46f796.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h1&gt;&lt;p&gt;Docker最近推出了可以运行在Win10和Mac上的稳定版本，让我们赶紧来体验一下。  &lt;/p&gt;
+&lt;h1 id=&quot;2-
+      
+    
+    </summary>
+    
+      <category term="Docker" scheme="http://yoursite.com/categories/Docker/"/>
+    
+    
+      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>win10家庭版怎么免费升级到专业版|win10家庭版转专业版方法</title>
+    <link href="http://yoursite.com/2017/12/04/win10%E5%AE%B6%E5%BA%AD%E7%89%88%E6%80%8E%E4%B9%88%E5%85%8D%E8%B4%B9%E5%8D%87%E7%BA%A7%E5%88%B0%E4%B8%93%E4%B8%9A%E7%89%88win10%E5%AE%B6%E5%BA%AD%E7%89%88%E8%BD%AC%E4%B8%93%E4%B8%9A%E7%89%88%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2017/12/04/win10家庭版怎么免费升级到专业版win10家庭版转专业版方法/</id>
+    <published>2017-12-04T07:43:44.000Z</published>
+    <updated>2019-01-02T03:46:44.668Z</updated>
+    
+    <content type="html"><![CDATA[<p>我们知道<a href="http://www.xitongcheng.com/jiaocheng/xtazjc_article_15709.html" target="_blank" rel="noopener">win7和win8.1可以免费升级win10系统</a>，不过多数用户电脑自带的win7或win8.1都是家庭版或中文版本，升级后对应的win10是家庭版，win10家庭版功能不如专业版齐全，接下来小编就教大家win10家庭版免费升级专业版的步骤。 <strong>win10家庭版转专业版方法：</strong> 1、依次打开开始菜单—设置—更新和安全—激活—更改产品密钥；</p><p><img src="http://img.xitongcheng.com/upload/image/20160201/20160201121129_51889.jpg" alt="win10家庭版转专业版方法 步骤1"></p><p>2、输入产品升级密钥VK7JG-NPHTM-C97JM-9MPGT-3V66T ，W269N-WFGWX-YVC9B-4J6C9-T83GX，MH37W-N47XK-V7XM9-C7227-GCQG9；</p><p><img src="http://img.xitongcheng.com/upload/image/20160201/20160201121139_70739.jpg" alt="win10家庭版转专业版方法 步骤2"></p><p>3、提示“升级你的Windows版本”，点击开始升级；</p><p><img src="http://img.xitongcheng.com/upload/image/20160201/20160201121148_75182.jpg" alt="win10家庭版转专业版方法 步骤3"></p><p>4、重启之后升级完成，变成win10专业版；</p><p><img src="http://img.xitongcheng.com/upload/image/20160201/20160201121159_73800.jpg" alt="win10家庭版转专业版方法 步骤4"></p><p>5、如果以上方法无法执行，则<a href="http://www.xitongcheng.com/win10/win10_xiazai_2316.html" target="_blank" rel="noopener">下载win10原版专业版系统</a>直接升级安装或<a href="http://www.xitongcheng.com/win10/" target="_blank" rel="noopener">win10免激活版</a>快速安装； 6、再使用<a href="http://www.xitongcheng.com/soft/win10jhgju/" target="_blank" rel="noopener">win10激活工具</a>自动永久激活。 以上就是通过升级密钥将win10家庭版在线免费升级专业版的方法，除此之外还可以直接下载安装win10专业版，再通过激活工具来激活。   原文地址：<a href="http://www.xitongcheng.com/jiaocheng/xtazjc\_article\_16065.html" target="_blank" rel="noopener">http://www.xitongcheng.com/jiaocheng/xtazjc\_article\_16065.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我们知道&lt;a href=&quot;http://www.xitongcheng.com/jiaocheng/xtazjc_article_15709.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;win7和win8.1可以免费升级win10系统&lt;/a&gt;，
+      
+    
+    </summary>
+    
+      <category term="未分类" scheme="http://yoursite.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    
+    
+      <category term="Windows" scheme="http://yoursite.com/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows（64位）下使用curl命令</title>
+    <link href="http://yoursite.com/2017/11/29/windows(64%E4%BD%8D)%E4%B8%8B%E4%BD%BF%E7%94%A8curl%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2017/11/29/windows(64位)下使用curl命令/</id>
+    <published>2017-11-29T07:35:48.000Z</published>
+    <updated>2019-01-02T03:46:44.669Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Curl命令可以通过命令行的方式，执行Http请求。在Elasticsearch中有使用的场景，因此这里研究下如何在windows下执行curl命令。</p></blockquote><h2 id="工具下载"><a href="#工具下载" class="headerlink" title="工具下载"></a>工具下载</h2><p>在官网处下载工具包：<a href="http://curl.haxx.se/download.html" target="_blank" rel="noopener">http://curl.haxx.se/download.html</a> <img src="http://images0.cnblogs.com/blog2015/449064/201507/162140236889309.png" alt="">  </p><h2 id="使用方式一：在curl-exe目录中使用"><a href="#使用方式一：在curl-exe目录中使用" class="headerlink" title="使用方式一：在curl.exe目录中使用"></a>使用方式一：在curl.exe目录中使用</h2><p>解压下载后的压缩文件，通过cmd命令进入到curl.exe所在的目录。 由于博主使用的是windows 64位 的系统，因此可以使用I386下的curl.exe工具。 进入到该目录后，执行curl –help测试： <img src="http://images0.cnblogs.com/blog2015/449064/201507/162145094232084.png" alt=""></p><h2 id="使用方式二：放置在system32中"><a href="#使用方式二：放置在system32中" class="headerlink" title="使用方式二：放置在system32中"></a>使用方式二：放置在system32中</h2><p>解压下载好的文件，拷贝I386/curl.exe文件到C:\Windows\System32 然后就可以在DOS窗口中任意位置，使用curl命令了。</p><h2 id="使用方式三：配置环境变量"><a href="#使用方式三：配置环境变量" class="headerlink" title="使用方式三：配置环境变量"></a>使用方式三：配置环境变量</h2><p>在系统高级环境变量中，配置 CURL_HOME —– “你的curl目录位置\curl-7.43.0” path —- 末尾添加 “;%CURL_HOME%\I386” 这样与上面方式二的效果相同。   原文链接：<a href="https://www.cnblogs.com/xing901022/p/4652624.html" target="_blank" rel="noopener">https://www.cnblogs.com/xing901022/p/4652624.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Curl命令可以通过命令行的方式，执行Http请求。在Elasticsearch中有使用的场景，因此这里研究下如何在windows下执行curl命令。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;工具下载&quot;&gt;&lt;a href=&quot;#工具下载&quot; 
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://yoursite.com/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Laravel笔记：指定表名的重要性</title>
+    <link href="http://yoursite.com/2017/11/17/Laravel%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%8C%87%E5%AE%9A%E8%A1%A8%E5%90%8D%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/"/>
+    <id>http://yoursite.com/2017/11/17/Laravel笔记：指定表名的重要性/</id>
+    <published>2017-11-17T07:59:21.000Z</published>
+    <updated>2019-01-02T03:46:44.669Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近准备开始花一些自己的空余时间来学习一下PHP的框架，<a href="http://www.iyu.co/" target="_blank" rel="noopener">爱鱼客</a>在做了一些了解之后打算从Laravel框架开始学习，原因就是现在越来越多的人开始使用<a href="http://www.iyu.co/tag/Laravel" target="_blank" rel="noopener">Laravel框架</a>了。以后会时不时添加一些笔记以加深印象也便于日后查看。<img src="http://cdn.iyu.co/wp-content/uploads/2017/01/laravel.jpg" alt="laravel"></p><h2 id="今日笔记：Laravel表名的指定"><a href="#今日笔记：Laravel表名的指定" class="headerlink" title="今日笔记：Laravel表名的指定"></a>今日笔记：Laravel表名的指定</h2><p>由于Laravel在创建 <code>Model</code> 的时候会自动关联对应的表名，具体遇到问题的流程如下： 在Terminal中输入以下指令后会在 <code>App</code> 目录下创建一个<code>customer.php</code> 文件</p><pre><code>php artisan make:model Customer</code></pre><p>但是这边默认需要在数据库中添加的表为 customers 而不是 customer，也就是说系统会自动根据 Model 的名称加上复数“s”，这边一般情况是没有问题，但是如果遇到诸如 person 变 people 或者各种我们国人不能很简单辨别的形式，那么实惠对我们的开发造成问题；另外也有可能我们不想要系统自动匹配数据库，而要对表名进行自定义。</p><p>我们需要做的其实很简单，在创建的 Model 文件函数中添加一条指定表名的规则：</p><pre><code>&lt;?php</code></pre><p>如上我们加入了 <code>protected $table = &#39;customer&#39;;</code>，强制把 <code>customer.php</code> 对应的数据库指定为 <code>customer</code>，而不是系统默认的 <code>customers</code>。这一点我们也可以在框架自带的User.php中看到，为了程序运行稳定和不出错，这一步应该在每一个<code>Model</code> 中都应用。   原文链接：<a href="http://www.iyu.co/web/laravel-protect-table/" target="_blank" rel="noopener">http://www.iyu.co/web/laravel-protect-table/</a> <img src="http://gdmizi.com/wp-content/uploads/2017/11/QQ截图20171117161904-1024x75.png" alt=""> 我表名为category，但是转化为categories了，加s后也不行。所以最好还是要指定表名 相关链接：<a href="https://laravel-china.org/topics/201/table-name-with-the-class-name-in-the-plural-form-how-to-deal-with-irregular-nouns" target="_blank" rel="noopener">https://laravel-china.org/topics/201/table-name-with-the-class-name-in-the-plural-form-how-to-deal-with-irregular-nouns</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近准备开始花一些自己的空余时间来学习一下PHP的框架，&lt;a href=&quot;http://www.iyu.co/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;爱鱼客&lt;/a&gt;在做了一些了解之后打算从Laravel框架开始学习，原因就是现在越来越多的人开始使用
+      
+    
+    </summary>
+    
+      <category term="Laravel" scheme="http://yoursite.com/categories/Laravel/"/>
+    
+      <category term="PHP" scheme="http://yoursite.com/categories/Laravel/PHP/"/>
+    
+    
+      <category term="Laravel" scheme="http://yoursite.com/tags/Laravel/"/>
+    
+      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP开发api接口安全验证</title>
+    <link href="http://yoursite.com/2017/11/15/PHP%E5%BC%80%E5%8F%91api%E6%8E%A5%E5%8F%A3%E5%AE%89%E5%85%A8%E9%AA%8C%E8%AF%81/"/>
+    <id>http://yoursite.com/2017/11/15/PHP开发api接口安全验证/</id>
+    <published>2017-11-15T07:33:07.000Z</published>
+    <updated>2019-01-02T03:46:44.669Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="php的api接口"><a href="#php的api接口" class="headerlink" title="php的api接口"></a><strong>php的api接口</strong></h2><p>在实际工作中，使用PHP写api接口是经常做的，PHP写好接口后，前台就可以通过链接获取接口提供的数据，而返回的数据一般分为两种情况，xml和json,在这个过程中，服务器并不知道，请求的来源是什么，有可能是别人非法调用我们的接口，获取数据，因此就要使用安全验证。</p><h2 id="验证原理"><a href="#验证原理" class="headerlink" title="验证原理"></a><strong>验证原理</strong></h2><h3 id="示意图"><a href="#示意图" class="headerlink" title="示意图"></a><strong>示意图</strong></h3><p><img src="http://img.blog.csdn.net/20170317142531762?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGk3NDEzNTAxNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a><strong>原理</strong></h3><p>从图中可以看得很清楚，前台想要调用接口，需要使用几个参数生成签名。</p><ul><li>时间戳：当前时间</li><li>随机数：随机生成的随机数</li><li>口令：前后台开发时，一个双方都知道的标识，相当于暗号</li><li>算法规则：商定好的运算规则，上面三个参数可以利用算法规则生成一个签名。</li></ul><p>前台生成一个签名，当需要访问接口的时候，把时间戳，随机数，签名通过URL传递到后台。后台拿到时间戳，随机数后，通过一样的算法规则计算出签名，然后和传递过来的签名进行对比，一样的话，返回数据。</p><h3 id="算法规则"><a href="#算法规则" class="headerlink" title="算法规则"></a><strong>算法规则</strong></h3><p>在前后台交互中，算法规则是非常重要的，前后台都要通过算法规则计算出签名，至于规则怎么制定，看你怎么高兴怎么来。 我这个算法规则是</p><ol><li>时间戳，随机数，口令按照首字母大小写顺序排序</li><li>然后拼接成字符串</li><li>进行sha1加密</li><li>再进行MD5加密</li><li>转换成大写。</li></ol><h2 id="前台"><a href="#前台" class="headerlink" title="前台"></a><strong>前台</strong></h2><p>这里我并没有实际的前台，直接使用一个PHP文件代替前台，然后通过CURL模拟GET请求。我使用的是TP框架，URL格式是pathinfo格式。</p><h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a><strong>源代码</strong></h3><pre><code>&lt;?php/** * Created by PhpStorm. * User: Administrator * Date: 2017/3/16 0016 * Time: 15:56 */namespace Client\Controller;use Think\Controller;class ClientController extends Controller{    const TOKEN = &apos;API&apos;;    //模拟前台请求服务器api接口    public function getDataFromServer(){        //时间戳        $timeStamp = time();        //随机数        $randomStr = $this -&gt; createNonceStr();        //生成签名        $signature = $this -&gt; arithmetic($timeStamp,$randomStr);        //url地址        $url = &quot;http://www.apitest.com/Server/Server/respond/t/{$timeStamp}/r/{$randomStr}/s/{$signature}&quot;;        $result = $this -&gt; httpGet($url);        dump($result);    }    //curl模拟get请求。    private function httpGet($url){        $curl = curl_init();        //需要请求的是哪个地址        curl_setopt($curl,CURLOPT_URL,$url);        //表示把请求的数据已文件流的方式输出到变量中        curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);        $result = curl_exec($curl);        curl_close($curl);        return $result;    }    //随机生成字符串    private function createNonceStr($length = 8) {        $chars = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;;        $str = &quot;&quot;;        for ($i = 0; $i &lt; $length; $i++) {            $str .= substr($chars, mt_rand(0, strlen($chars) - 1), 1);        }        return &quot;z&quot;.$str;    }    /**     * @param $timeStamp 时间戳     * @param $randomStr 随机字符串     * @return string 返回签名     */    private function arithmetic($timeStamp,$randomStr){        $arr[&apos;timeStamp&apos;] = $timeStamp;        $arr[&apos;randomStr&apos;] = $randomStr;        $arr[&apos;token&apos;] = self::TOKEN;        //按照首字母大小写顺序排序        sort($arr,SORT_STRING);        //拼接成字符串        $str = implode($arr);        //进行加密        $signature = sha1($str);        $signature = md5($signature);        //转换成大写        $signature = strtoupper($signature);        return $signature;    }}</code></pre><h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a><strong>服务器端</strong></h2><p>接受前台数据进行验证</p><h3 id="源代码-1"><a href="#源代码-1" class="headerlink" title="源代码"></a><strong>源代码</strong></h3><pre><code>&lt;?php/** * Created by PhpStorm. * User: Administrator * Date: 2017/3/16 0016 * Time: 16:01 */namespace Server\Controller;use Think\Controller;class ServerController extends Controller{    const TOKEN = &apos;API&apos;;    //响应前台的请求    public function respond(){        //验证身份        $timeStamp = $_GET[&apos;t&apos;];        $randomStr = $_GET[&apos;r&apos;];        $signature = $_GET[&apos;s&apos;];        $str = $this -&gt; arithmetic($timeStamp,$randomStr);        if($str != $signature){            echo &quot;-1&quot;;            exit;        }        //模拟数据        $arr[&apos;name&apos;] = &apos;api&apos;;        $arr[&apos;age&apos;] = 15;        $arr[&apos;address&apos;] = &apos;zz&apos;;        $arr[&apos;ip&apos;] = &quot;192.168.0.1&quot;;        echo json_encode($arr);    }    /**     * @param $timeStamp 时间戳     * @param $randomStr 随机字符串     * @return string 返回签名     */    public function arithmetic($timeStamp,$randomStr){        $arr[&apos;timeStamp&apos;] = $timeStamp;        $arr[&apos;randomStr&apos;] = $randomStr;        $arr[&apos;token&apos;] = self::TOKEN;        //按照首字母大小写顺序排序        sort($arr,SORT_STRING);        //拼接成字符串        $str = implode($arr);        //进行加密        $signature = sha1($str);        $signature = md5($signature);        //转换成大写        $signature = strtoupper($signature);        return $signature;    }}</code></pre><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a><strong>结果</strong></h2><pre><code>string(57) &quot;{&quot;name&quot;:&quot;api&quot;,&quot;age&quot;:15,&quot;address&quot;:&quot;zz&quot;,&quot;ip&quot;:&quot;192.168.0.1&quot;}&quot;</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h2><p>这种方法只是其中的一种方法，其实还有很多方法都是可以进行安全验证的。     原文链接：<a href="http://blog.csdn.net/li741350149/article/details/62887524" target="_blank" rel="noopener">http://blog.csdn.net/li741350149/article/details/62887524</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;php的api接口&quot;&gt;&lt;a href=&quot;#php的api接口&quot; class=&quot;headerlink&quot; title=&quot;php的api接口&quot;&gt;&lt;/a&gt;&lt;strong&gt;php的api接口&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;在实际工作中，使用PHP写api接口是经常做的，P
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://yoursite.com/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Laravel 5.4: 特殊字段太长报错</title>
+    <link href="http://yoursite.com/2017/11/09/Laravel%205.4%20%E7%89%B9%E6%AE%8A%E5%AD%97%E6%AE%B5%E5%A4%AA%E9%95%BF%E6%8A%A5%E9%94%99/"/>
+    <id>http://yoursite.com/2017/11/09/Laravel 5.4 特殊字段太长报错/</id>
+    <published>2017-11-09T08:46:38.000Z</published>
+    <updated>2019-01-02T03:46:44.668Z</updated>
+    
+    <content type="html"><![CDATA[<p>laravel 5.4 改变了默认的数据库字符集，现在utf8mb4包括存储emojis支持。如果你运行MySQL v5.7.7或者更高版本，则不需要做任何事情。 当你试着在一些MariaDB或者一些老版本的的MySQL上运行 migrations 命令时，你可能会碰到下面这个错误：</p><p>[Illuminate\Database\QueryException]<br>SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long;<br>max key length is 767 bytes (SQL: alter table users add unique users_email_unique(email))</p><p>[PDOException]<br>SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long;<br>max key length is 767 bytes</p><p>我们可以在 AppServiceProvider.php 文件里的 boot 方法里设置一个默认值：</p><p>&lt;?php<br>namespace App\Providers;</p><p>use Illuminate\Support\ServiceProvider;<br>use Illuminate\Support\Facades\Schema;</p><p>class AppServiceProvider extends ServiceProvider<br>{<br>/**<br>* Bootstrap any application services.<br>*<br>* @return void<br>*/<br>public function boot()<br>{<br>Schema::defaultStringLength(191);<br>}</p><p>/**<br>* Register any application services.<br>*<br>* @return void<br>*/<br>public function register()<br>{<br>//<br>}<br>}</p><p>原文链接：<a href="https://www.cnblogs.com/betx/p/6544090.html" target="_blank" rel="noopener">https://www.cnblogs.com/betx/p/6544090.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;laravel 5.4 改变了默认的数据库字符集，现在utf8mb4包括存储emojis支持。如果你运行MySQL v5.7.7或者更高版本，则不需要做任何事情。 当你试着在一些MariaDB或者一些老版本的的MySQL上运行 migrations 命令时，你可能会碰到下面
+      
+    
+    </summary>
+    
+      <category term="Laravel" scheme="http://yoursite.com/categories/Laravel/"/>
+    
+      <category term="PHP" scheme="http://yoursite.com/categories/Laravel/PHP/"/>
+    
+    
+      <category term="Laravel" scheme="http://yoursite.com/tags/Laravel/"/>
+    
+      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sublime Text 3 使用MarkDown编写带预览的文本</title>
+    <link href="http://yoursite.com/2017/10/18/Sublime%20Text%203%20%E4%BD%BF%E7%94%A8MarkDown%E7%BC%96%E5%86%99%E5%B8%A6%E9%A2%84%E8%A7%88%E7%9A%84%E6%96%87%E6%9C%AC/"/>
+    <id>http://yoursite.com/2017/10/18/Sublime Text 3 使用MarkDown编写带预览的文本/</id>
+    <published>2017-10-18T09:47:39.000Z</published>
+    <updated>2019-01-02T03:46:44.670Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://blog.csdn.net/marksinoberg/article/details/50993456" target="_blank" rel="noopener">http://blog.csdn.net/marksinoberg/article/details/50993456</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/marksinoberg/article/details/50993456&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://blog.csdn.net/marksinoberg/art
+      
+    
+    </summary>
+    
+      <category term="未分类" scheme="http://yoursite.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>php mysql中如何往表中追加数据</title>
+    <link href="http://yoursite.com/2017/09/29/php%20mysql%E4%B8%AD%E5%A6%82%E4%BD%95%E5%BE%80%E8%A1%A8%E4%B8%AD%E8%BF%BD%E5%8A%A0%E6%95%B0%E6%8D%AE/"/>
+    <id>http://yoursite.com/2017/09/29/php mysql中如何往表中追加数据/</id>
+    <published>2017-09-29T08:49:18.000Z</published>
+    <updated>2019-01-02T03:46:44.667Z</updated>
+    
+    <content type="html"><![CDATA[<p>网友回复:update table set field=concat(field, ‘072110003’) where field=’072110001’; 在两个号码中间用空格隔开，则可以用 update table set field=concat(‘ ‘, field, ‘072110003’) where field=’072110001’; 网友回复:这是固定字符串 我现在需要的是变量追加，意思是现在的072110001存放在一个变量中，网页上的一个表单中，如何追加？ 网友回复:update table set field=concat(‘ ‘, field, ‘换成一个变量’) where field=’072110001’; 这样不就可以了么？如果要追加多个，可以把SQL写入循环里． 网友回复:恩 不错 搞定了 等的接分吧 网友回复:说的清楚点~~~ 网友回复:汗，刚发现帖出来的sql里面有个地方错了。 update table set field=concat(‘ ‘, field, ‘072110003’) where field=’072110001’; 应该是 update table set field=concat_ws(‘ ‘, field, ‘072110003’) where field=’072110001’; 或者 update table set field=concat(field, ‘ ‘, ‘072110003’) where field=’072110001’; 对于需要一次添加多个值，并且都用’ ‘隔开的话，用第二条语句比较方便。 一次只用一个的话，concat比较简单而且不同数据库通用。 网友回复:在问一个相反的问题，如何从这个字段里去掉部分值， 比如说现在是“072110002 072110003”，我要去掉072110003或者是去掉072110002，应如何实现？ 应该也是用update吧，还是用delete? 网友回复:高手们，快帮下忙啊，谢谢了 ！！！ 网友回复:我不得不说，这样的表设计太………………了。 网友回复:现实需要，不得不设计成这样啊。这个问题我解决了。 问一个很奇怪的问题 ： 我在表单里输出了数据库中的一条记录，我改变了表单中输出的内容，怎么写不到数据库里了，始终改变不了里面的内容。我做的是修改功能，怎么修改不了？ 网友回复:update table set field=replace(field, ‘072110003’, ‘’) where field=’072110001 072110003’   原文链接：<a href="http://blog.163.com/liang\_fujianyeah@126/blog/static/11592655220119193632193/" target="_blank" rel="noopener">http://blog.163.com/liang\_fujianyeah@126/blog/static/11592655220119193632193/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;网友回复:update table set field=concat(field, ‘072110003’) where field=’072110001’; 在两个号码中间用空格隔开，则可以用 update table set field=concat(‘ ‘, fiel
+      
+    
+    </summary>
+    
+      <category term="MySQL" scheme="http://yoursite.com/categories/MySQL/"/>
+    
+      <category term="SQL" scheme="http://yoursite.com/categories/MySQL/SQL/"/>
+    
+    
+      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sublime Text 3设置吊炸天PHP开发环境</title>
+    <link href="http://yoursite.com/2017/09/29/Sublime%20Text%203%E8%AE%BE%E7%BD%AE%E5%90%8A%E7%82%B8%E5%A4%A9PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>http://yoursite.com/2017/09/29/Sublime Text 3设置吊炸天PHP开发环境/</id>
+    <published>2017-09-29T05:45:23.000Z</published>
+    <updated>2019-01-02T03:46:44.668Z</updated>
+    
+    <content type="html"><![CDATA[<p>原文链接：<a href="http://blog.csdn.net/heiyeshuwu/article/details/51859571" target="_blank" rel="noopener">http://blog.csdn.net/heiyeshuwu/article/details/51859571</a> <a href="http://blog.csdn.net/menglongfc/article/details/51141084" target="_blank" rel="noopener">http://blog.csdn.net/menglongfc/article/details/51141084</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;原文链接：&lt;a href=&quot;http://blog.csdn.net/heiyeshuwu/article/details/51859571&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://blog.csdn.net/heiyeshuwu/ar
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://yoursite.com/categories/PHP/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>pgsql 关闭自动提交事务</title>
+    <link href="http://yoursite.com/2017/09/28/pgsql%20%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%8F%90%E4%BA%A4%E4%BA%8B%E5%8A%A1/"/>
+    <id>http://yoursite.com/2017/09/28/pgsql 关闭自动提交事务/</id>
+    <published>2017-09-28T08:39:49.000Z</published>
+    <updated>2019-01-02T03:46:44.668Z</updated>
+    
+    <content type="html"><![CDATA[<p>最早以前,  postgresql服务端有 autocommit开关, 然而又有语句 begin transaction 来控制事务, 这样可能会造成混乱, 比如 autocommit=on的情况下, 用begin transaction启动手工事务,此时autocommit到底是on 还是off? 后来干脆就取消autocommit开关, 只有一条命令begin transaction来管理事务, 越简单越不易混乱.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最早以前,  postgresql服务端有 autocommit开关, 然而又有语句 begin transaction 来控制事务, 这样可能会造成混乱, 比如 autocommit=on的情况下, 用begin transaction启动手工事务,此时autocommi
+      
+    
+    </summary>
+    
+      <category term="PostgreSql" scheme="http://yoursite.com/categories/PostgreSql/"/>
+    
+      <category term="SQL" scheme="http://yoursite.com/categories/PostgreSql/SQL/"/>
+    
+    
+      <category term="PostgreSQL" scheme="http://yoursite.com/tags/PostgreSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql排行榜代码</title>
+    <link href="http://yoursite.com/2017/09/26/mysql%E6%8E%92%E8%A1%8C%E6%A6%9C%E4%BB%A3%E7%A0%81/"/>
+    <id>http://yoursite.com/2017/09/26/mysql排行榜代码/</id>
+    <published>2017-09-26T08:27:00.000Z</published>
+    <updated>2019-01-02T03:46:44.667Z</updated>
+    
+    <content type="html"><![CDATA[<p>显示前10位名次，并显示自己名次。 1.xxx 2.xxx ….. 10.xxxx 我的当前名次: 第xx名。 这样应该如何编写，主要就是如何显示自己名次。    </p><p>前十<a href="https://www.baidu.com/s?wd=SQL&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">SQL</a>：<br><a href="https://www.baidu.com/s?wd=SELECT&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">SELECT</a> * <a href="https://www.baidu.com/s?wd=FROM&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">FROM</a> `some_table`<br>    ORDER BY `score`<br>    <a href="https://www.baidu.com/s?wd=LIMIT&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">LIMIT</a> 10<br>自己名次如<a href="https://www.baidu.com/s?wd=ls&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">ls</a>：<br><a href="https://www.baidu.com/s?wd=SELECT&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">SELECT</a> COUNT(`score`) <a href="https://www.baidu.com/s?wd=FROM&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">FROM</a> `some_table`<br>    <a href="https://www.baidu.com/s?wd=WHERE&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">WHERE</a><code>score</code>&gt;(<a href="https://www.baidu.com/s?wd=SELECT&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">SELECT</a> `score`  <a href="https://www.baidu.com/s?wd=FROM&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">FROM</a> `some_table` <a href="https://www.baidu.com/s?wd=WHERE&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">WHERE</a> id=#用户的id);<br>就是获得比自己分数高的人有多少</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;显示前10位名次，并显示自己名次。 1.xxx 2.xxx ….. 10.xxxx 我的当前名次: 第xx名。 这样应该如何编写，主要就是如何显示自己名次。    &lt;/p&gt;
+&lt;p&gt;前十&lt;a href=&quot;https://www.baidu.com/s?wd=SQL&amp;amp;t
+      
+    
+    </summary>
+    
+      <category term="MySQL" scheme="http://yoursite.com/categories/MySQL/"/>
+    
+      <category term="SQL" scheme="http://yoursite.com/categories/MySQL/SQL/"/>
+    
+    
+      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>版本更新比较版本号大小</title>
+    <link href="http://yoursite.com/2017/09/22/%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E6%AF%94%E8%BE%83%E7%89%88%E6%9C%AC%E5%8F%B7%E5%A4%A7%E5%B0%8F/"/>
+    <id>http://yoursite.com/2017/09/22/版本更新比较版本号大小/</id>
+    <published>2017-09-22T06:00:19.000Z</published>
+    <updated>2019-01-02T03:46:44.667Z</updated>
+    
+    <content type="html"><![CDATA[<p>需求来源: 在APP迭代更新过程中,有这样的需求,需要比较版本号的大小,然后弹出提示框提示更新. 之前版本号一直是中规中矩的按照1.1.0 –&gt; 1.1.2这种数字变化方式.采用的方法是:将版本号字符串中的.号删除掉之后,比较两个数字的大小,后来发现在App Store中,各种APP的版本号数字变化的格式千奇百怪,1.0.11–&gt;1.1.0,如果还采用上面的方法比较版本号,就不对了1011(本地version)肯定是大于110(线上版本),而实际上1.1.0是1.0.11的下一个版本. 解决方法: 版本号是分成三个模块来命名的,所以比较大小还是将三个部分剖开来比较大小兼容性强一些,万一遇到版本号命名没有按照规定的格式来,到时候大小就判断错了. 思路是这样的:三个部分,从第一个部分开始比较大小,优先级:第一部分&gt;第二部分&gt;第三部分,一旦分出大小就代表比较结束了,只要前面一部分大,无论后面一部分怎么小都没关系. /*<em> </em> 版本比较 <em> @param $v1 </em> @param $v2 <em> @return int </em>/ public function compareVersion($v1,$v2) { $v1 = explode(‘.’,$v1); $v2 = explode(‘.’,$v2); $minlen = count($v1) &lt; count($v2) ? count($v1) : count($v2); for ($i = 0; $i &lt; $minlen; $i++){//以最短的数组长度为遍历次数,防止数组越界 if($v1[$i] &lt; $v2[$i]){//从前往后比较数字大小,一旦分出大小,跳出循环 return 1; break; } } return 0; } 相关链接：<a href="http://blog.csdn.net/qq\_31186665/article/details/55095144" target="_blank" rel="noopener">http://blog.csdn.net/qq\_31186665/article/details/55095144</a> <a href="http://blog.csdn.net/liujun99/article/details/53006662?utm\_source=itdadao&amp;utm\_medium=referral" target="_blank" rel="noopener">http://blog.csdn.net/liujun99/article/details/53006662?utm\_source=itdadao&amp;utm\_medium=referral</a> <a href="http://www.jianshu.com/p/ee1990270ee1" target="_blank" rel="noopener">http://www.jianshu.com/p/ee1990270ee1</a> <a href="http://blog.sina.com.cn/s/blog\_6feaf58501017py9.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog\_6feaf58501017py9.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;需求来源: 在APP迭代更新过程中,有这样的需求,需要比较版本号的大小,然后弹出提示框提示更新. 之前版本号一直是中规中矩的按照1.1.0 –&amp;gt; 1.1.2这种数字变化方式.采用的方法是:将版本号字符串中的.号删除掉之后,比较两个数字的大小,后来发现在App Stor
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://yoursite.com/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php获取时间是星期几</title>
+    <link href="http://yoursite.com/2017/09/18/php%E8%8E%B7%E5%8F%96%E6%97%B6%E9%97%B4%E6%98%AF%E6%98%9F%E6%9C%9F%E5%87%A0/"/>
+    <id>http://yoursite.com/2017/09/18/php获取时间是星期几/</id>
+    <published>2017-09-18T08:27:06.000Z</published>
+    <updated>2019-01-02T03:46:44.666Z</updated>
+    
+    <content type="html"><![CDATA[<p>PHP星期几获取代码：</p><p>date(“l”); //data就可以获取英文的星期比如Sunday date(“w”); //这个可以获取数字星期比如123，注意0是星期日</p><p>  获取中文星期几：</p><p>$weekarray=array(“日”,”一”,”二”,”三”,”四”,”五”,”六”); //先定义一个数组 echo “星期”.$weekarray[date(“w”)];</p><p>  获取指定日期是：</p><p>$weekarray=array(“日”,”一”,”二”,”三”,”四”,”五”,”六”); echo “星期”.$weekarray[date(“w”,strtotime(“2011-11-11”))];</p><p>原文链接：<a href="http://www.cnblogs.com/jinshuo/p/6733096.html" target="_blank" rel="noopener">http://www.cnblogs.com/jinshuo/p/6733096.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;PHP星期几获取代码：&lt;/p&gt;
+&lt;p&gt;date(“l”); //data就可以获取英文的星期比如Sunday date(“w”); //这个可以获取数字星期比如123，注意0是星期日&lt;/p&gt;
+&lt;p&gt;  获取中文星期几：&lt;/p&gt;
+&lt;p&gt;$weekarray=array(“日”
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://yoursite.com/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+    
+  </entry>
+  
+</feed>
