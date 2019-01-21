@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> PostgreSQL快速随机取出记录 · Hexo</title><meta name="description" content="PostgreSQL快速随机取出记录 - gd"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Hexo"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/logo.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">首页</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="http://weibo.com/3774381537" target="_blank" class="nav-list-link">微博</a></li><li class="nav-list-item"><a href="https://github.com/785156621" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">PostgreSQL快速随机取出记录</h1><div class="post-info">2017年9月13日</div><div class="post-content"><p>1、传统的，也是最慢的方式： SELECT myid FROM mytable ORDER BY RANDOM() LIMIT 1; 缺点：近似于全表扫描，没有好的索引可以走； 2、稍微快一点的方式，用offset来实现： SELECT myid FROM mytable OFFSET floor(random()*N) LIMIT 1; 3、德哥的实现方式，用函数实现：</p>
+<ol>
+<li>digoal=&gt; create or replace function f_get_random (i_range int) returns setof record as $BODY$</li>
+<li>digoal$&gt; declare</li>
+<li>digoal$&gt; v_result record;</li>
+<li>digoal$&gt; v_max_id int;</li>
+<li>digoal$&gt; v_min_id int;</li>
+<li>digoal$&gt; v_random numeric;</li>
+<li>digoal$&gt; begin</li>
+<li>digoal$&gt; select random() into v_random;</li>
+<li>digoal$&gt; select max(id),min(id) into v_max_id,v_min_id from tbl_user;</li>
+<li>digoal$&gt; for v_result in select <em> from tbl_user where id between (v_min_id+(v_random</em>(v_max_id-v_min_id))::int) and (v_min_id+(v_random*(v_max_id-v_min_id))::int+i_range)</li>
+<li>digoal$&gt; loop</li>
+<li>digoal$&gt; return next v_result;</li>
+<li>digoal$&gt; end loop;</li>
+<li>digoal$&gt; return;</li>
+<li>digoal$&gt; end</li>
+<li>digoal$&gt; $BODY$ language plpgsql;</li>
+<li><p>CREATE FUNCTION</p>
+</li>
+<li><p>以下举例取出10条连续的随机记录</p>
+</li>
+<li><p>digoal=&gt; select * from f_get_random(9) as (id bigint,firstname varchar(32),lastname varchar(32),corp varchar(32),age smallint);</p>
+</li>
+</ol>
+<p>4、借助另一列的索引实现：</p>
+<ol>
+<li>create table randtest (id serial primary key, data int not null);</li>
+<li>insert into randtest (data) select (random()*1000000)::int from generate_series(1,1000000);</li>
+<li>create index randtest_md5_id_idx on randtest (md5(id::text));</li>
+<li>explain analyze</li>
+<li>select * from randtest where md5(id::text)&gt;md5(random()::text) order by md5(id::text) limit 1;</li>
+</ol>
+<p>5、9.5版用 TABLESAMPLE:</p>
+<ol>
+<li>SELECT * FROM my_table TABLESAMPLE SYSTEM(0.000001) LIMIT 1;</li>
+</ol>
+<p>原文链接：<a href="http://blog.chinaunix.net/uid-20332519-id-5616589.html" target="_blank" rel="noopener">http://blog.chinaunix.net/uid-20332519-id-5616589.html</a></p>
+</div></article></div></main><footer><div class="paginator"><a href="/2017/09/13/2017/SQL/MySQL/为什么NOT IN比NOT EXISTS效率差/" class="prev">上一篇</a><a href="/2017/09/08/2017/Linux/CentOS/Linux-CentOS XAMPP Apache 启用GZIP压缩功能 mod_deflate的安装配置/" class="next">下一篇</a></div><div class="copyright"><p>© 2015 - 2019 <a href="http://yoursite.com">gd</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>

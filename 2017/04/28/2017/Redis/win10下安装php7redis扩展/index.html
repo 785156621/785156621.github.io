@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> win10下安装php7redis扩展 · Hexo</title><meta name="description" content="win10下安装php7redis扩展 - gd"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Hexo"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/logo.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">首页</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="http://weibo.com/3774381537" target="_blank" class="nav-list-link">微博</a></li><li class="nav-list-item"><a href="https://github.com/785156621" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">win10下安装php7redis扩展</h1><div class="post-info">2017年4月28日</div><div class="post-content"><p>一、工具准备 1. <a href="http://lib.csdn.net/base/redis" title="Redis知识库" target="_blank" rel="noopener">Redis</a> for windows 下载 <a href="https://github.com/MSOpenTech/redis" target="_blank" rel="noopener">https://github.com/MSOpenTech/redis</a> 2. <a href="http://lib.csdn.net/base/36" title="PHP知识库" target="_blank" rel="noopener">PHP</a>扩展下载 <a href="http://pecl.php.net/package-stats.php" target="_blank" rel="noopener">http://pecl.php.net/package-stats.php</a> （redis 和 igbinary） <a href="http://lib.csdn.net/base/php" title="PHP知识库" target="_blank" rel="noopener">PHP</a> 7 扩展下载 <a href="http://windows.php.net/downloads/pecl/snaps/redis/20160319/" target="_blank" rel="noopener">http://windows.php.net/downloads/pecl/snaps/redis/20160319/</a> <a href="http://windows.php.net/downloads/pecl/releases/redis/3.1.2/" target="_blank" rel="noopener">http://windows.php.net/downloads/pecl/releases/redis/3.1.2/</a> <a href="http://windows.php.net/downloads/pecl/snaps/redis/20160319/" target="_blank" rel="noopener">注： 下载扩展是要注意看自己的php版本及x86orx64 和 compiler  编译版本</a> 二、redis安装 1.redis安装 将下载后的redis文件解压到安装目录 2.redis启动 1).windows+R 然后 cmd 进入到D:\program files\redis（根据自己redis路径自行调整） 2).输入 redis-server.exe 点击回车，自己注意看一下redis目录下文件情况，不同版本的启动方式有点小差异。出现下图标识执行成功。<strong>成功后别关闭当前窗口，操作redis期间都要保证此窗口打开，关闭此窗口表示 关闭reids，重新打开一个cmd</strong> 3).cmd 进入到D:\program files\redis（根据自己redis路径自行调整） 然后输入 redis-cli.exe 点击回车。现在我们就可以做一些测试如下图，标识redis安装 启动成功。 <strong>注：两个cmd窗口同时打开，之前开启redis的窗口不能关掉</strong> 三、 php扩展 1.把下载到的php_redis.dll和php_igbinary.dll扩展文件 拷贝到php\ext中 2. 打开php.ini；加入以下代码</p>
+<ol>
+<li>#php for redis</li>
+<li>extension=php_igbinary.dll</li>
+<li>extension=php_redis.dll</li>
+</ol>
+<p>3.重启服务，phpinfo中有redis项表示成功 四.demo</p>
+<ol>
+<li><span style="font-size:18px;">$redis = new redis();</span></li>
+<li>$redis-&gt;connect(“127.0.0.1”,”6379”);  //php客户端设置的ip及端口  </li>
+<li>//存储一个 值  </li>
+<li>$redis-&gt;set(“type”,12);</li>
+<li><p>echo $redis-&gt;get(“type”);</p>
+</li>
+<li><p>//存储多个值  </p>
+</li>
+<li>$array = array(‘first_key’=&gt;’first_val’,</li>
+<li>‘second_key’=&gt;’second_val’,</li>
+<li>‘third_key’=&gt;’third_val’);</li>
+<li>$array_get = array(‘first_key’,’second_key’,’third_key’);</li>
+<li>$redis-&gt;mset($array);</li>
+<li>var_dump($redis-&gt;mget($array_get)); </li>
+</ol>
+<p><img src="http://img.blog.csdn.net/20151210101815352?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""> <strong>附：Redis类的一些属性及方法</strong> <strong> a）连接redis server</strong></p>
+<ul>
+<li>connect ：连接server</li>
+<li>pconnect ：长连接</li>
+<li>auth ：权限验证</li>
+<li>select ：选择DB</li>
+<li>close ： 关闭连接</li>
+<li>setOption : 设置 client 选项</li>
+<li>getOption ： 获取client选项</li>
+<li>ping ： ping redis server</li>
+<li>echo ： 输出字符串</li>
+</ul>
+<p>注意，如果频繁操作redis，不停地connect 和close会很耗性能的，这个时候，建议用pconnect 建立个长连接 <strong>b）字符串读写函数</strong></p>
+<ul>
+<li>append  ：在值的后面追加值</li>
+<li>decr ：递减一个key的值</li>
+<li>incr ：递增一个key的值</li>
+<li>get ：获取一个值</li>
+<li>set ：设置一个值</li>
+<li>getSet ：设置值，并返回老值</li>
+<li>mGet ：批量获取值</li>
+<li>mSet ：批量设置值</li>
+<li>strlen ：获取值长度</li>
+</ul>
+<p>注意：如果能用批量操作尽量用批量，减少频繁连接redis<a href="http://lib.csdn.net/base/14" title="MySQL知识库" target="_blank" rel="noopener">数据库</a>性能 <strong>c）hash读写函数</strong></p>
+<ul>
+<li>hDel ：删除一个多个域</li>
+<li>hExists ：判断一个hash域是否存在</li>
+<li>hGet ：获取hash域的值</li>
+<li>hGetAll ：获取所有域值</li>
+<li>hIncrBy ：自增长一个hash int域的值</li>
+<li>hKeys ：获取hash 所有域</li>
+<li>hLen ：获取域个数</li>
+<li>hMGet ：批量获取域的值</li>
+<li>hMSet ：批量设置域的值</li>
+<li>hSet ：设置域的值</li>
+<li>hVals：得到所有域的值</li>
+</ul>
+<p><strong>d）list读写函数</strong></p>
+<ul>
+<li>lInsert：插入元素</li>
+<li>lLen：list长度</li>
+<li>lPop：移除并获取第一个颜色</li>
+<li>lPush：插入一个元素</li>
+<li>lRem：移除元素</li>
+<li>lSet：设置元素值</li>
+</ul>
+<p><strong>e）set</strong></p>
+<ul>
+<li>sAdd：增加一个或多个成员</li>
+<li>sIsMember：是否包含</li>
+<li>sMembers：得到成员</li>
+<li>sMove：移动成员</li>
+<li>sPop：移除成员</li>
+<li>sRandMember：得到随机成员</li>
+<li>sRem：删除</li>
+</ul>
+<p><strong>f）sorted set</strong></p>
+<ul>
+<li>zAdd：增加一个或多个</li>
+<li>zCard：成员个数</li>
+<li>zIncrBy：递增成员score</li>
+<li>zRange：返回索引范围内的成员</li>
+<li>zRangeByScore ：返回score范围内的成员</li>
+<li>zScore：获取成员score</li>
+<li>zRem：移除一个或多个成员</li>
+</ul>
+</div></article></div></main><footer><div class="paginator"><a href="/2017/05/02/2017/Postman/Postman 使用手册系列教程/" class="prev">上一篇</a></div><div class="copyright"><p>© 2015 - 2019 <a href="http://yoursite.com">gd</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>

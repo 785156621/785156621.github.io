@@ -6,20 +6,45 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-17T02:50:32.378Z</updated>
+  <updated>2019-01-17T09:52:12.248Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>gd</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>php 二维数组根据某个字段排序</title>
+    <link href="http://yoursite.com/2019/01/17/2019/PHP/php%20%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%A0%B9%E6%8D%AE%E6%9F%90%E4%B8%AA%E5%AD%97%E6%AE%B5%E6%8E%92%E5%BA%8F/"/>
+    <id>http://yoursite.com/2019/01/17/2019/PHP/php 二维数组根据某个字段排序/</id>
+    <published>2019-01-17T09:22:39.000Z</published>
+    <updated>2019-01-17T09:52:12.248Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 二维数组根据某个字段排序</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> array $array 要排序的数组</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> string $keys   要排序的键字段</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> string $sort  排序类型  SORT_ASC     SORT_DESC</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> array 排序后的数组</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">if</span> (function_exists(<span class="string">'array_sorting'</span>) === <span class="keyword">false</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">array_sorting</span><span class="params">($array, $keys, $sort = SORT_DESC)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $keysValue = [];</span><br><span class="line">        <span class="keyword">foreach</span> ($array <span class="keyword">as</span> $k =&gt; $v) &#123;</span><br><span class="line">            $keysValue[$k] = $v[$keys];</span><br><span class="line">        &#125;</span><br><span class="line">        array_multisort($keysValue, $sort, $array);</span><br><span class="line">        <span class="keyword">return</span> $array;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>相关链接：<a href="https://www.cnblogs.com/dcb3688/p/4608004.html" target="_blank" rel="noopener">https://www.cnblogs.com/dcb3688/p/4608004.html</a><br>&emsp;&emsp;&emsp;&emsp;&emsp;<a href="https://www.cnblogs.com/M-D-Luffy/p/4224127.html" target="_blank" rel="noopener">https://www.cnblogs.com/M-D-Luffy/p/4224127.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://yoursite.com/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>php 中文字符串替换</title>
-    <link href="http://yoursite.com/2019/01/17/php%20%E4%B8%AD%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9B%BF%E6%8D%A2/"/>
-    <id>http://yoursite.com/2019/01/17/php 中文字符串替换/</id>
+    <link href="http://yoursite.com/2019/01/17/2019/PHP/php%20%E4%B8%AD%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9B%BF%E6%8D%A2/"/>
+    <id>http://yoursite.com/2019/01/17/2019/PHP/php 中文字符串替换/</id>
     <published>2019-01-17T05:22:39.000Z</published>
     <updated>2019-01-17T02:50:32.378Z</updated>
     
@@ -43,8 +68,8 @@
   
   <entry>
     <title>PHP中被忽略的性能优化利器：生成器 yield</title>
-    <link href="http://yoursite.com/2019/01/15/PHP%E4%B8%AD%E8%A2%AB%E5%BF%BD%E7%95%A5%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%88%A9%E5%99%A8%20%E7%94%9F%E6%88%90%E5%99%A8%20yield/"/>
-    <id>http://yoursite.com/2019/01/15/PHP中被忽略的性能优化利器 生成器 yield/</id>
+    <link href="http://yoursite.com/2019/01/15/2019/PHP/PHP%E4%B8%AD%E8%A2%AB%E5%BF%BD%E7%95%A5%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%88%A9%E5%99%A8%20%E7%94%9F%E6%88%90%E5%99%A8%20yield/"/>
+    <id>http://yoursite.com/2019/01/15/2019/PHP/PHP中被忽略的性能优化利器 生成器 yield/</id>
     <published>2019-01-15T10:25:39.000Z</published>
     <updated>2019-01-15T10:54:59.112Z</updated>
     
@@ -68,30 +93,9 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2019/01/02/hello-world/"/>
-    <id>http://yoursite.com/2019/01/02/hello-world/</id>
-    <published>2019-01-02T03:29:58.760Z</published>
-    <updated>2019-01-02T03:29:58.760Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>局域网内访问Homestead环境</title>
-    <link href="http://yoursite.com/2017/12/13/%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85%E8%AE%BF%E9%97%AEHomestead%E7%8E%AF%E5%A2%83/"/>
-    <id>http://yoursite.com/2017/12/13/局域网内访问Homestead环境/</id>
+    <link href="http://yoursite.com/2017/12/13/2017/PHP/Laravel/%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85%E8%AE%BF%E9%97%AEHomestead%E7%8E%AF%E5%A2%83/"/>
+    <id>http://yoursite.com/2017/12/13/2017/PHP/Laravel/局域网内访问Homestead环境/</id>
     <published>2017-12-13T06:00:40.000Z</published>
     <updated>2019-01-02T03:46:44.672Z</updated>
     
@@ -117,8 +121,8 @@
   
   <entry>
     <title>Vagrant 删除同名box</title>
-    <link href="http://yoursite.com/2017/12/12/Vagrant%20%E5%88%A0%E9%99%A4%E5%90%8C%E5%90%8Dbox/"/>
-    <id>http://yoursite.com/2017/12/12/Vagrant 删除同名box/</id>
+    <link href="http://yoursite.com/2017/12/12/2017/Vagrant/Vagrant%20%E5%88%A0%E9%99%A4%E5%90%8C%E5%90%8Dbox/"/>
+    <id>http://yoursite.com/2017/12/12/2017/Vagrant/Vagrant 删除同名box/</id>
     <published>2017-12-12T07:44:37.000Z</published>
     <updated>2019-01-02T03:46:44.671Z</updated>
     
@@ -144,8 +148,8 @@
   
   <entry>
     <title>手把手教你Homestead安装，并填坑</title>
-    <link href="http://yoursite.com/2017/12/12/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0Homestead%E5%AE%89%E8%A3%85%EF%BC%8C%E5%B9%B6%E5%A1%AB%E5%9D%91/"/>
-    <id>http://yoursite.com/2017/12/12/手把手教你Homestead安装，并填坑/</id>
+    <link href="http://yoursite.com/2017/12/12/2017/PHP/Laravel/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0Homestead%E5%AE%89%E8%A3%85%EF%BC%8C%E5%B9%B6%E5%A1%AB%E5%9D%91/"/>
+    <id>http://yoursite.com/2017/12/12/2017/PHP/Laravel/手把手教你Homestead安装，并填坑/</id>
     <published>2017-12-12T06:31:33.000Z</published>
     <updated>2019-01-02T03:46:44.671Z</updated>
     
@@ -175,12 +179,12 @@
   
   <entry>
     <title>在windows下进行linux开发：利用Vagrant+virtualbox</title>
-    <link href="http://yoursite.com/2017/12/12/%E5%9C%A8windows%E4%B8%8B%E8%BF%9B%E8%A1%8Clinux%E5%BC%80%E5%8F%91%EF%BC%9A%E5%88%A9%E7%94%A8Vagrant+virtualbox/"/>
-    <id>http://yoursite.com/2017/12/12/在windows下进行linux开发：利用Vagrant+virtualbox/</id>
+    <link href="http://yoursite.com/2017/12/12/2017/Vagrant/%E5%9C%A8windows%E4%B8%8B%E8%BF%9B%E8%A1%8Clinux%E5%BC%80%E5%8F%91%EF%BC%9A%E5%88%A9%E7%94%A8Vagrant+virtualbox/"/>
+    <id>http://yoursite.com/2017/12/12/2017/Vagrant/在windows下进行linux开发：利用Vagrant+virtualbox/</id>
     <published>2017-12-12T02:07:17.000Z</published>
-    <updated>2019-01-02T03:46:44.671Z</updated>
+    <updated>2019-01-21T10:19:52.742Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="1，介绍Vagrant"><a href="#1，介绍Vagrant" class="headerlink" title="1，介绍Vagrant"></a>1，介绍Vagrant</h3><p>我们做web开发的时候经常要安装各种本地测试环境，比如apache,php,mysql,redis等等。出于个人使用习惯，可能我们还是比较习惯用windows。虽然说在windows下搭建各种开发环境是可行的，各大开发环境都有windows版本。然而在windows下配置有时候会显得繁琐，并且还会导致开发环境（windows）和生产环境（lunix）不一致。 能不能在windows下也像linux那样开发？也许你想到了，用虚拟机。用虚拟机装个linux系统就好了。装完linux系统就设置共享目录，设置网络端口映射，等等。好像也有那么点繁琐。 还有，假如我们是一个团队进行开发，那么每个人的电脑上都要装个虚拟机+ linux系统+各种运行环境。手动设置麻烦不说，大家的开发环境不太一致（可能你装了apcahe我装了nginx等），也是头疼。能不能把各种设置都自动化，并且保持整个团队的开发环境一致呢？ Vagrant就是为了解决这个问题而生的。它使用开源 VirtualBox 作为虚拟化支持，可以轻松的跨平台部署。</p><h3 id="2，下载"><a href="#2，下载" class="headerlink" title="2，下载"></a>2，下载</h3><p>下载VirtualBox：<a href="http://download.virtualbox.org/virtualbox/5.2.2/VirtualBox-5.2.2-119230-Win.exe" target="_blank" rel="noopener">http://download.virtualbox.org/virtualbox/5.2.2/VirtualBox-5.2.2-119230-Win.exe</a> 上面给出的是5.2.2版本的下载链接。要下载其他版本请访问官网<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">https://www.virtualbox.org/wiki/Downloads</a> 下载Vagrant：<a href="https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.msi?_ga=2.92704287.362862624.1512962307-1615333745.1510288662" target="_blank" rel="noopener">https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.msi?_ga=2.92704287.362862624.1512962307-1615333745.1510288662</a> 上面给出的是2.0.1版本win64位的下载链接。要下载其他版本请访问官网 <a href="http://www.vagrantup.com/downloads.html" target="_blank" rel="noopener">http://www.vagrantup.com/downloads.html</a> 下载虚拟镜像： <a href="https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.0.0/centos-6.6-x86_64.box" target="_blank" rel="noopener">https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.0.0/centos-6.6-x86_64.box</a> 上面给出的是centos-6.6镜像下载链接，要下载其他镜像请访问官网</p><ul><li>官方仓库：<a href="https://atlas.hashicorp.com/boxes/search" target="_blank" rel="noopener">https://atlas.hashicorp.com/boxes/search</a></li><li>官方镜像：<a href="https://vagrantcloud.com/boxes/search" target="_blank" rel="noopener">https://vagrantcloud.com/boxes/search</a></li><li>第三方仓库：<a href="http://www.vagrantbox.es/" target="_blank" rel="noopener">http://www.vagrantbox.es/</a></li></ul><h3 id="3，安装"><a href="#3，安装" class="headerlink" title="3，安装"></a>3，安装</h3><p>下载好上面的软件包后，先安装VirtualBox,然后安装Vagrant。都是双击即可安装的，所以没什么好介绍。下面介绍下怎么把镜像导入。 先新建一个工作目录 比如我新建了D:VagrantWorkcentos-6.6-x86_64 打开cmd命令提示符，进入新目录，以我上面的目录为例，输入</p><pre><code>D:cd D:VagrantWorkcentos-6.6-x86_64</code></pre><p>然后输入命令初始化 <code>vagrant init centos6.6</code> 把下载的centos-6.6-x86_64.box复制到本目录D:VagrantWorkcentos-6.6-x86_64下，执行 <code>vagrant box add centos6.6 centos-6.6-x86_64.box</code> 检查是否导入成功 <code>vagrant box list</code></p><h3 id="4，配置"><a href="#4，配置" class="headerlink" title="4，配置"></a>4，配置</h3><p>用文本编辑器打开D:VagrantWorkcentos-6.6-x86_64目录下的Vagrantfile文件便可以进行一些常用配置。 下面列举出几个常用的配置。要用到其他配置请访问官网文档或者百度谷歌一下。 1，端口映射 <code>config.vm.network :forwarded_port, guest: 80, host: 8080</code> 把上面这句代码前面的#号去掉。它表示映射本机的8080端口到虚拟机的80端口 2，如果需要自己自由的访问虚拟机，但是别人不需要访问虚拟机，可以使用private_network，并为虚拟机设置IP。 <code>config.vm.network :private_network, ip: 192.168.33.10</code> 把上面这句代码前面的#号去掉即可 3，目录映射 <code>config.vm.synced_folder &quot;D:/www&quot;, &quot;/var/www/html&quot;</code> 如果启用上面的命令，表示把本机的data目录共享到虚拟机里的/var/www目录</p><h3 id="5，启动"><a href="#5，启动" class="headerlink" title="5，启动"></a>5，启动</h3><p>进入目录D:VagrantWorkcentos-6.6-x86_64后执行命令 <code>vagrant up</code> 虚拟机启动之后则可以通过 vagrant ssh 联入虚拟机进行进一步的环境配置，或者软件安装相关的工作，在Windows系统下，并不能直接通过 vagrant ssh 连到虚拟机，需要使用 Putty，Xshell 等第三方工具进行连接。连接地址127.0.0.1，端口2222。登录的帐号root的密码为 vagrant</p><h3 id="6，导出"><a href="#6，导出" class="headerlink" title="6，导出"></a>6，导出</h3><p>在cmd里进行工作目录后，执行下面命令 <code>vagrant package --output centos-6.6.box</code> 完成后会在当前目录就会生成package.box，之后新建虚拟机则可使用这个box。如果事先在你的虚拟机里建立好了各种开发环境，那么你直接把这个box给你的团队其他成员安装，这样就可以省去一台台电脑部署的时间，还可以保持开发环境一致。很方便有木有。</p><h3 id="7，其他命令"><a href="#7，其他命令" class="headerlink" title="7，其他命令"></a>7，其他命令</h3><p>下面列举出一些常用的cmd操作命令 vagrant up （启动虚拟机） vagrant halt （关闭虚拟机——对应就是关机） vagrant suspend （暂停虚拟机——只是暂停，虚拟机内存等信息将以状态文件的方式保存在本地，可以执行恢复操作后继续使用） vagrant resume （恢复虚拟机 —— 与前面的暂停相对应） vagrant box remove centos6.6 （移除box，其中centos6.6是box名） vagrant destroy （删除虚拟机，删除后在当前虚拟机所做进行的除开Vagrantfile中的配置都不会保留）</p><h3 id="8，常见问题"><a href="#8，常见问题" class="headerlink" title="8，常见问题"></a>8，常见问题</h3><p>执行vagrant up时报以下错误： <img src="http://gdmizi.com/wp-content/uploads/2017/12/QQ图片20171211143055.png" alt=""> 解决方法： <code>vagrant plugin install vagrant-vbguest</code> <code>vagrant reload</code>   相关链接：<a href="http://blog.star7th.com/2015/06/1538.html" target="_blank" rel="noopener">http://blog.star7th.com/2015/06/1538.html</a> <a href="http://blog.csdn.net/yjk13703623757/article/details/70040797" target="_blank" rel="noopener">http://blog.csdn.net/yjk13703623757/article/details/70040797</a> <a href="http://blog.csdn.net/demon3182/article/details/51436032" target="_blank" rel="noopener">http://blog.csdn.net/demon3182/article/details/51436032</a> <a href="http://www.jb51.net/article/121766.htm" target="_blank" rel="noopener">http://www.jb51.net/article/121766.htm</a></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="1，介绍Vagrant"><a href="#1，介绍Vagrant" class="headerlink" title="1，介绍Vagrant"></a>1，介绍Vagrant</h3><p>我们做web开发的时候经常要安装各种本地测试环境，比如apache,php,mysql,redis等等。出于个人使用习惯，可能我们还是比较习惯用windows。虽然说在windows下搭建各种开发环境是可行的，各大开发环境都有windows版本。然而在windows下配置有时候会显得繁琐，并且还会导致开发环境（windows）和生产环境（lunix）不一致。 能不能在windows下也像linux那样开发？也许你想到了，用虚拟机。用虚拟机装个linux系统就好了。装完linux系统就设置共享目录，设置网络端口映射，等等。好像也有那么点繁琐。 还有，假如我们是一个团队进行开发，那么每个人的电脑上都要装个虚拟机+ linux系统+各种运行环境。手动设置麻烦不说，大家的开发环境不太一致（可能你装了apcahe我装了nginx等），也是头疼。能不能把各种设置都自动化，并且保持整个团队的开发环境一致呢？ Vagrant就是为了解决这个问题而生的。它使用开源 VirtualBox 作为虚拟化支持，可以轻松的跨平台部署。</p><h3 id="2，下载"><a href="#2，下载" class="headerlink" title="2，下载"></a>2，下载</h3><p>下载VirtualBox：<a href="http://download.virtualbox.org/virtualbox/5.2.2/VirtualBox-5.2.2-119230-Win.exe" target="_blank" rel="noopener">http://download.virtualbox.org/virtualbox/5.2.2/VirtualBox-5.2.2-119230-Win.exe</a> 上面给出的是5.2.2版本的下载链接。要下载其他版本请访问官网<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">https://www.virtualbox.org/wiki/Downloads</a> 下载Vagrant：<a href="https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.msi?_ga=2.92704287.362862624.1512962307-1615333745.1510288662" target="_blank" rel="noopener">https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.msi?_ga=2.92704287.362862624.1512962307-1615333745.1510288662</a> 上面给出的是2.0.1版本win64位的下载链接。要下载其他版本请访问官网 <a href="http://www.vagrantup.com/downloads.html" target="_blank" rel="noopener">http://www.vagrantup.com/downloads.html</a> 下载虚拟镜像： <a href="https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.0.0/centos-6.6-x86_64.box" target="_blank" rel="noopener">https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.0.0/centos-6.6-x86_64.box</a> 上面给出的是centos-6.6镜像下载链接，要下载其他镜像请访问官网</p><ul><li>官方仓库：<a href="https://atlas.hashicorp.com/boxes/search" target="_blank" rel="noopener">https://atlas.hashicorp.com/boxes/search</a></li><li>官方镜像：<a href="https://vagrantcloud.com/boxes/search" target="_blank" rel="noopener">https://vagrantcloud.com/boxes/search</a></li><li>第三方仓库：<a href="http://www.vagrantbox.es/" target="_blank" rel="noopener">http://www.vagrantbox.es/</a></li></ul><h3 id="3，安装"><a href="#3，安装" class="headerlink" title="3，安装"></a>3，安装</h3><p>下载好上面的软件包后，先安装VirtualBox,然后安装Vagrant。都是双击即可安装的，所以没什么好介绍。下面介绍下怎么把镜像导入。 先新建一个工作目录 比如我新建了D:VagrantWorkcentos-6.6-x86_64 打开cmd命令提示符，进入新目录，以我上面的目录为例，输入</p><pre><code>D:cd D:VagrantWorkcentos-6.6-x86_64</code></pre><p>然后输入命令初始化 <code>vagrant init centos6.6</code> 把下载的centos-6.6-x86_64.box复制到本目录D:VagrantWorkcentos-6.6-x86_64下，执行 <code>vagrant box add centos6.6 centos-6.6-x86_64.box</code> 检查是否导入成功 <code>vagrant box list</code></p><h3 id="4，配置"><a href="#4，配置" class="headerlink" title="4，配置"></a>4，配置</h3><p>用文本编辑器打开D:VagrantWorkcentos-6.6-x86_64目录下的Vagrantfile文件便可以进行一些常用配置。 下面列举出几个常用的配置。要用到其他配置请访问官网文档或者百度谷歌一下。 1，端口映射 <code>config.vm.network :forwarded_port, guest: 80, host: 8080</code> 把上面这句代码前面的#号去掉。它表示映射本机的8080端口到虚拟机的80端口 2，如果需要自己自由的访问虚拟机，但是别人不需要访问虚拟机，可以使用private_network，并为虚拟机设置IP。 <code>config.vm.network :private_network, ip: 192.168.33.10</code> 把上面这句代码前面的#号去掉即可 3，目录映射 <code>config.vm.synced_folder &quot;D:/www&quot;, &quot;/var/www/html&quot;</code> 如果启用上面的命令，表示把本机的data目录共享到虚拟机里的/var/www目录</p><h3 id="5，启动"><a href="#5，启动" class="headerlink" title="5，启动"></a>5，启动</h3><p>进入目录D:VagrantWorkcentos-6.6-x86_64后执行命令 <code>vagrant up</code> 虚拟机启动之后则可以通过 vagrant ssh 联入虚拟机进行进一步的环境配置，或者软件安装相关的工作，在Windows系统下，并不能直接通过 vagrant ssh 连到虚拟机，需要使用 Putty，Xshell 等第三方工具进行连接。连接地址127.0.0.1，端口2222。登录的帐号root的密码为 vagrant</p><h3 id="6，导出"><a href="#6，导出" class="headerlink" title="6，导出"></a>6，导出</h3><p>在cmd里进行工作目录后，执行下面命令 <code>vagrant package --output centos-6.6.box</code> 完成后会在当前目录就会生成package.box，之后新建虚拟机则可使用这个box。如果事先在你的虚拟机里建立好了各种开发环境，那么你直接把这个box给你的团队其他成员安装，这样就可以省去一台台电脑部署的时间，还可以保持开发环境一致。很方便有木有。</p><h3 id="7，其他命令"><a href="#7，其他命令" class="headerlink" title="7，其他命令"></a>7，其他命令</h3><p>下面列举出一些常用的cmd操作命令 vagrant up （启动虚拟机） vagrant halt （关闭虚拟机——对应就是关机） vagrant suspend （暂停虚拟机——只是暂停，虚拟机内存等信息将以状态文件的方式保存在本地，可以执行恢复操作后继续使用） vagrant resume （恢复虚拟机 —— 与前面的暂停相对应） vagrant box remove centos6.6 （移除box，其中centos6.6是box名） vagrant destroy （删除虚拟机，删除后在当前虚拟机所做进行的除开Vagrantfile中的配置都不会保留）</p><h3 id="8，常见问题"><a href="#8，常见问题" class="headerlink" title="8，常见问题"></a>8，常见问题</h3><p>执行vagrant up时报以下错误： 解决方法： <code>vagrant plugin install vagrant-vbguest</code> <code>vagrant reload</code></p><p>相关链接：<a href="http://blog.star7th.com/2015/06/1538.html" target="_blank" rel="noopener">http://blog.star7th.com/2015/06/1538.html</a><br><a href="http://blog.csdn.net/yjk13703623757/article/details/70040797" target="_blank" rel="noopener">http://blog.csdn.net/yjk13703623757/article/details/70040797</a><br><a href="http://blog.csdn.net/demon3182/article/details/51436032" target="_blank" rel="noopener">http://blog.csdn.net/demon3182/article/details/51436032</a><br><a href="http://www.jb51.net/article/121766.htm" target="_blank" rel="noopener">http://www.jb51.net/article/121766.htm</a></p>]]></content>
     
     <summary type="html">
     
@@ -200,8 +204,8 @@
   
   <entry>
     <title>mount: unknown filesystem type &#39;vboxsf&#39;</title>
-    <link href="http://yoursite.com/2017/12/11/mount%20unknown%20filesystem%20type%20&#39;vboxsf&#39;/"/>
-    <id>http://yoursite.com/2017/12/11/mount unknown filesystem type &#39;vboxsf&#39;/</id>
+    <link href="http://yoursite.com/2017/12/11/2017/Vagrant/mount%20unknown%20filesystem%20type%20&#39;vboxsf&#39;/"/>
+    <id>http://yoursite.com/2017/12/11/2017/Vagrant/mount unknown filesystem type &#39;vboxsf&#39;/</id>
     <published>2017-12-11T06:35:04.000Z</published>
     <updated>2019-01-02T03:46:44.670Z</updated>
     
@@ -225,8 +229,8 @@
   
   <entry>
     <title>Docker中配置国内镜像</title>
-    <link href="http://yoursite.com/2017/12/08/Docker%E4%B8%AD%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/"/>
-    <id>http://yoursite.com/2017/12/08/Docker中配置国内镜像/</id>
+    <link href="http://yoursite.com/2017/12/08/2017/Docker/Docker%E4%B8%AD%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/"/>
+    <id>http://yoursite.com/2017/12/08/2017/Docker/Docker中配置国内镜像/</id>
     <published>2017-12-08T06:43:24.000Z</published>
     <updated>2019-01-02T03:46:44.670Z</updated>
     
@@ -250,8 +254,8 @@
   
   <entry>
     <title>win10 专业版安装docker</title>
-    <link href="http://yoursite.com/2017/12/05/win10%20%E4%B8%93%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85docker/"/>
-    <id>http://yoursite.com/2017/12/05/win10 专业版安装docker/</id>
+    <link href="http://yoursite.com/2017/12/05/2017/Docker/win10%20%E4%B8%93%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85docker/"/>
+    <id>http://yoursite.com/2017/12/05/2017/Docker/win10 专业版安装docker/</id>
     <published>2017-12-05T03:00:01.000Z</published>
     <updated>2019-01-02T03:46:44.669Z</updated>
     
@@ -276,8 +280,8 @@
   
   <entry>
     <title>win10家庭版怎么免费升级到专业版|win10家庭版转专业版方法</title>
-    <link href="http://yoursite.com/2017/12/04/win10%E5%AE%B6%E5%BA%AD%E7%89%88%E6%80%8E%E4%B9%88%E5%85%8D%E8%B4%B9%E5%8D%87%E7%BA%A7%E5%88%B0%E4%B8%93%E4%B8%9A%E7%89%88win10%E5%AE%B6%E5%BA%AD%E7%89%88%E8%BD%AC%E4%B8%93%E4%B8%9A%E7%89%88%E6%96%B9%E6%B3%95/"/>
-    <id>http://yoursite.com/2017/12/04/win10家庭版怎么免费升级到专业版win10家庭版转专业版方法/</id>
+    <link href="http://yoursite.com/2017/12/04/2017/Others/win10%E5%AE%B6%E5%BA%AD%E7%89%88%E6%80%8E%E4%B9%88%E5%85%8D%E8%B4%B9%E5%8D%87%E7%BA%A7%E5%88%B0%E4%B8%93%E4%B8%9A%E7%89%88win10%E5%AE%B6%E5%BA%AD%E7%89%88%E8%BD%AC%E4%B8%93%E4%B8%9A%E7%89%88%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2017/12/04/2017/Others/win10家庭版怎么免费升级到专业版win10家庭版转专业版方法/</id>
     <published>2017-12-04T07:43:44.000Z</published>
     <updated>2019-01-02T03:46:44.668Z</updated>
     
@@ -301,8 +305,8 @@
   
   <entry>
     <title>windows（64位）下使用curl命令</title>
-    <link href="http://yoursite.com/2017/11/29/windows(64%E4%BD%8D)%E4%B8%8B%E4%BD%BF%E7%94%A8curl%E5%91%BD%E4%BB%A4/"/>
-    <id>http://yoursite.com/2017/11/29/windows(64位)下使用curl命令/</id>
+    <link href="http://yoursite.com/2017/11/29/2017/PHP/windows(64%E4%BD%8D)%E4%B8%8B%E4%BD%BF%E7%94%A8curl%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2017/11/29/2017/PHP/windows(64位)下使用curl命令/</id>
     <published>2017-11-29T07:35:48.000Z</published>
     <updated>2019-01-02T03:46:44.669Z</updated>
     
@@ -329,8 +333,8 @@
   
   <entry>
     <title>Laravel笔记：指定表名的重要性</title>
-    <link href="http://yoursite.com/2017/11/17/Laravel%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%8C%87%E5%AE%9A%E8%A1%A8%E5%90%8D%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/"/>
-    <id>http://yoursite.com/2017/11/17/Laravel笔记：指定表名的重要性/</id>
+    <link href="http://yoursite.com/2017/11/17/2017/PHP/Laravel/Laravel%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%8C%87%E5%AE%9A%E8%A1%A8%E5%90%8D%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/"/>
+    <id>http://yoursite.com/2017/11/17/2017/PHP/Laravel/Laravel笔记：指定表名的重要性/</id>
     <published>2017-11-17T07:59:21.000Z</published>
     <updated>2019-01-02T03:46:44.669Z</updated>
     
@@ -350,16 +354,16 @@
       <category term="PHP" scheme="http://yoursite.com/categories/Laravel/PHP/"/>
     
     
-      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
-    
       <category term="Laravel" scheme="http://yoursite.com/tags/Laravel/"/>
+    
+      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
     
   </entry>
   
   <entry>
     <title>PHP开发api接口安全验证</title>
-    <link href="http://yoursite.com/2017/11/15/PHP%E5%BC%80%E5%8F%91api%E6%8E%A5%E5%8F%A3%E5%AE%89%E5%85%A8%E9%AA%8C%E8%AF%81/"/>
-    <id>http://yoursite.com/2017/11/15/PHP开发api接口安全验证/</id>
+    <link href="http://yoursite.com/2017/11/15/2017/PHP/PHP%E5%BC%80%E5%8F%91api%E6%8E%A5%E5%8F%A3%E5%AE%89%E5%85%A8%E9%AA%8C%E8%AF%81/"/>
+    <id>http://yoursite.com/2017/11/15/2017/PHP/PHP开发api接口安全验证/</id>
     <published>2017-11-15T07:33:07.000Z</published>
     <updated>2019-01-02T03:46:44.669Z</updated>
     
@@ -383,8 +387,8 @@
   
   <entry>
     <title>Laravel 5.4: 特殊字段太长报错</title>
-    <link href="http://yoursite.com/2017/11/09/Laravel%205.4%20%E7%89%B9%E6%AE%8A%E5%AD%97%E6%AE%B5%E5%A4%AA%E9%95%BF%E6%8A%A5%E9%94%99/"/>
-    <id>http://yoursite.com/2017/11/09/Laravel 5.4 特殊字段太长报错/</id>
+    <link href="http://yoursite.com/2017/11/09/2017/PHP/Laravel/Laravel%205.4%20%E7%89%B9%E6%AE%8A%E5%AD%97%E6%AE%B5%E5%A4%AA%E9%95%BF%E6%8A%A5%E9%94%99/"/>
+    <id>http://yoursite.com/2017/11/09/2017/PHP/Laravel/Laravel 5.4 特殊字段太长报错/</id>
     <published>2017-11-09T08:46:38.000Z</published>
     <updated>2019-01-02T03:46:44.668Z</updated>
     
@@ -404,16 +408,16 @@
       <category term="PHP" scheme="http://yoursite.com/categories/Laravel/PHP/"/>
     
     
-      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
-    
       <category term="Laravel" scheme="http://yoursite.com/tags/Laravel/"/>
+    
+      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
     
   </entry>
   
   <entry>
     <title>Sublime Text 3 使用MarkDown编写带预览的文本</title>
-    <link href="http://yoursite.com/2017/10/18/Sublime%20Text%203%20%E4%BD%BF%E7%94%A8MarkDown%E7%BC%96%E5%86%99%E5%B8%A6%E9%A2%84%E8%A7%88%E7%9A%84%E6%96%87%E6%9C%AC/"/>
-    <id>http://yoursite.com/2017/10/18/Sublime Text 3 使用MarkDown编写带预览的文本/</id>
+    <link href="http://yoursite.com/2017/10/18/2017/Others/Sublime%20Text%203%20%E4%BD%BF%E7%94%A8MarkDown%E7%BC%96%E5%86%99%E5%B8%A6%E9%A2%84%E8%A7%88%E7%9A%84%E6%96%87%E6%9C%AC/"/>
+    <id>http://yoursite.com/2017/10/18/2017/Others/Sublime Text 3 使用MarkDown编写带预览的文本/</id>
     <published>2017-10-18T09:47:39.000Z</published>
     <updated>2019-01-02T03:46:44.670Z</updated>
     
@@ -435,8 +439,8 @@
   
   <entry>
     <title>php mysql中如何往表中追加数据</title>
-    <link href="http://yoursite.com/2017/09/29/php%20mysql%E4%B8%AD%E5%A6%82%E4%BD%95%E5%BE%80%E8%A1%A8%E4%B8%AD%E8%BF%BD%E5%8A%A0%E6%95%B0%E6%8D%AE/"/>
-    <id>http://yoursite.com/2017/09/29/php mysql中如何往表中追加数据/</id>
+    <link href="http://yoursite.com/2017/09/29/2017/PHP/php%20mysql%E4%B8%AD%E5%A6%82%E4%BD%95%E5%BE%80%E8%A1%A8%E4%B8%AD%E8%BF%BD%E5%8A%A0%E6%95%B0%E6%8D%AE/"/>
+    <id>http://yoursite.com/2017/09/29/2017/PHP/php mysql中如何往表中追加数据/</id>
     <published>2017-09-29T08:49:18.000Z</published>
     <updated>2019-01-02T03:46:44.667Z</updated>
     
@@ -462,8 +466,8 @@
   
   <entry>
     <title>Sublime Text 3设置吊炸天PHP开发环境</title>
-    <link href="http://yoursite.com/2017/09/29/Sublime%20Text%203%E8%AE%BE%E7%BD%AE%E5%90%8A%E7%82%B8%E5%A4%A9PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
-    <id>http://yoursite.com/2017/09/29/Sublime Text 3设置吊炸天PHP开发环境/</id>
+    <link href="http://yoursite.com/2017/09/29/2017/Others/Sublime%20Text%203%E8%AE%BE%E7%BD%AE%E5%90%8A%E7%82%B8%E5%A4%A9PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>http://yoursite.com/2017/09/29/2017/Others/Sublime Text 3设置吊炸天PHP开发环境/</id>
     <published>2017-09-29T05:45:23.000Z</published>
     <updated>2019-01-02T03:46:44.668Z</updated>
     
@@ -485,8 +489,8 @@
   
   <entry>
     <title>pgsql 关闭自动提交事务</title>
-    <link href="http://yoursite.com/2017/09/28/pgsql%20%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%8F%90%E4%BA%A4%E4%BA%8B%E5%8A%A1/"/>
-    <id>http://yoursite.com/2017/09/28/pgsql 关闭自动提交事务/</id>
+    <link href="http://yoursite.com/2017/09/28/2017/SQL/PostgreSQL/pgsql%20%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%8F%90%E4%BA%A4%E4%BA%8B%E5%8A%A1/"/>
+    <id>http://yoursite.com/2017/09/28/2017/SQL/PostgreSQL/pgsql 关闭自动提交事务/</id>
     <published>2017-09-28T08:39:49.000Z</published>
     <updated>2019-01-02T03:46:44.668Z</updated>
     
@@ -512,8 +516,8 @@
   
   <entry>
     <title>mysql排行榜代码</title>
-    <link href="http://yoursite.com/2017/09/26/mysql%E6%8E%92%E8%A1%8C%E6%A6%9C%E4%BB%A3%E7%A0%81/"/>
-    <id>http://yoursite.com/2017/09/26/mysql排行榜代码/</id>
+    <link href="http://yoursite.com/2017/09/26/2017/SQL/MySQL/mysql%E6%8E%92%E8%A1%8C%E6%A6%9C%E4%BB%A3%E7%A0%81/"/>
+    <id>http://yoursite.com/2017/09/26/2017/SQL/MySQL/mysql排行榜代码/</id>
     <published>2017-09-26T08:27:00.000Z</published>
     <updated>2019-01-02T03:46:44.667Z</updated>
     

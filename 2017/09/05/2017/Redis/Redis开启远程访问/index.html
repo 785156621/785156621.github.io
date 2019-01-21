@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Redis开启远程访问 · Hexo</title><meta name="description" content="Redis开启远程访问 - gd"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Hexo"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/logo.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">首页</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="http://weibo.com/3774381537" target="_blank" class="nav-list-link">微博</a></li><li class="nav-list-item"><a href="https://github.com/785156621" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Redis开启远程访问</h1><div class="post-info">2017年9月5日</div><div class="post-content"><p><strong>Redis默认只允许本地访问，要使Redis可以远程访问可以修改redis.conf</strong></p>
+<p>打开redis.conf文件在<strong>NETWORK</strong>部分有说明</p>
+<p>################################## NETWORK #####################################</p>
+<p># By default, if no “bind” configuration directive is specified, Redis listens</p>
+<p># for connections from all the network interfaces available on the server.</p>
+<p># It is possible to listen to just one or multiple selected interfaces using</p>
+<p># the “bind” configuration directive, followed by one or more IP addresses.</p>
+<p>#</p>
+<p># Examples:</p>
+<p>#</p>
+<p># bind 192.168.1.100 10.0.0.1</p>
+<p># bind 127.0.0.1 ::1</p>
+<p>#</p>
+<p># <figure class="highlight plain"><figcaption><span>~~~ If the computer running Redis is directly exposed to the</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">\# internet, binding to all the interfaces is dangerous and will expose the</span><br><span class="line"></span><br><span class="line">\# instance to everybody on the internet. So by default we uncomment the</span><br><span class="line"></span><br><span class="line">\# following bind directive, that will force Redis to listen only into</span><br><span class="line"></span><br><span class="line">\# the IPv4 lookback interface address (this means Redis will be able to</span><br><span class="line"></span><br><span class="line">\# accept connections only from clients running into the same computer it</span><br><span class="line"></span><br><span class="line">\# is running).</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">\# IF YOU ARE SURE YOU WANT YOUR INSTANCE TO LISTEN TO ALL THE INTERFACES</span><br><span class="line"></span><br><span class="line">\# JUST COMMENT THE FOLLOWING LINE.</span><br><span class="line"></span><br><span class="line">\# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span><br></pre></td></tr></table></figure></p>
+<p>bind 127.0.0.1</p>
+<p><strong>解决办法：注释掉bind 127.0.0.1可以使所有的ip访问redis</strong></p>
+<p>若是想指定多个ip访问，但并不是全部的ip访问，可以bind</p>
+<p><strong>注意</strong></p>
+<p>下面还有个说明</p>
+<p># Protected mode is a layer of security protection, in order to avoid that</p>
+<p># Redis instances left open on the internet are accessed and exploited.</p>
+<p>#</p>
+<p># When protected mode is on and if:</p>
+<p>#</p>
+<p># 1) The server is not binding explicitly to a set of addresses using the</p>
+<h1 id="“bind”-directive"><a href="#“bind”-directive" class="headerlink" title="“bind” directive."></a>“bind” directive.</h1><p># 2) No password is configured.</p>
+<p>#</p>
+<p># The server only accepts connections from clients connecting from the</p>
+<p># IPv4 and IPv6 loopback addresses 127.0.0.1 and ::1, and from Unix domain</p>
+<p># sockets.</p>
+<p>#</p>
+<p># By default protected mode is enabled. You should disable it only if</p>
+<p># you are sure you want clients from other hosts to connect to Redis</p>
+<p># even if no authentication is configured, nor a specific set of interfaces</p>
+<p># are explicitly listed using the “bind” directive.</p>
+<p>protected-mode yes</p>
+<p>在redis3.2之后，redis增加了protected-mode，在这个模式下，即使注释掉了bind 127.0.0.1，再访问redisd时候还是报错，如下</p>
+<p>(error) DENIED Redis is running in protected mode because protected mode is enabled, no bind address was specified, no authentication password is requested to clients. In this mode connections are only accepted from the loopback interface. If you want to connect from external computers to Redis you may adopt one of the following solutions: 1) Just disable protected mode sending the command ‘CONFIG SET protected-mode no’ from the loopback interface by connecting to Redis from the same host the server is running, however MAKE SURE Redis is not publicly accessible from internet if you do so. Use CONFIG REWRITE to make this change permanent. 2) Alternatively you can just disable the protected mode by editing the Redis configuration file, and setting the protected mode option to ‘no’, and then restarting the server. 3) If you started the server manually just for testing, restart it with the ‘–protected-mode no’ option. 4) Setup a bind address or an authentication password. NOTE: You only need to do one of the above things in order for the server to start accepting connections from the outside.</p>
+<p><strong>修改办法：protected-mode no</strong></p>
+<p>如果还是连接不上 bind 127.0.0.1 改为 bind 0.0.0.0</p>
+<p>最后重启reids</p>
+</div></article></div></main><footer><div class="paginator"><a href="/2017/09/05/2017/Redis/php 如何连接有密码的Redis服务器/" class="prev">上一篇</a><a href="/2017/09/05/2017/Redis/systemctl管理Redis启动、停止、开机启动/" class="next">下一篇</a></div><div class="copyright"><p>© 2015 - 2019 <a href="http://yoursite.com">gd</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>
