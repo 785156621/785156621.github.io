@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>gdmizi</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-17T09:52:12.248Z</updated>
+  <updated>2019-01-25T06:34:34.347Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信小程序如何debug调试</title>
+    <link href="http://yoursite.com/2019/01/17/2019/weapp/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%A6%82%E4%BD%95debug%E8%B0%83%E8%AF%95/"/>
+    <id>http://yoursite.com/2019/01/17/2019/weapp/微信小程序如何debug调试/</id>
+    <published>2019-01-17T09:22:39.000Z</published>
+    <updated>2019-01-25T06:34:34.347Z</updated>
+    
+    <content type="html"><![CDATA[<p>在小程序程序中调用接口地址后加：<code>?XDEBUG_SESSION_START=1</code></p><p>即可进入debug调试模式。前提是接口地址得是本地环境。</p><p>效果：小程序调接口时会直接跳转到PhpStorm对应接口打断点处。</p><p>此方法，对<code>Postman</code>也适用。</p><p>相关链接：<a href="https://blog.csdn.net/qq_15936309/article/details/81700650?utm_source=blogxgwz5" target="_blank" rel="noopener">https://blog.csdn.net/qq_15936309/article/details/81700650?utm_source=blogxgwz5</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在小程序程序中调用接口地址后加：&lt;code&gt;?XDEBUG_SESSION_START=1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;即可进入debug调试模式。前提是接口地址得是本地环境。&lt;/p&gt;
+&lt;p&gt;效果：小程序调接口时会直接跳转到PhpStorm对应接口打断点处。&lt;/p&gt;
+&lt;p&gt;
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://yoursite.com/categories/PHP/"/>
+    
+      <category term="weapp" scheme="http://yoursite.com/categories/PHP/weapp/"/>
+    
+    
+      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+    
+      <category term="weapp" scheme="http://yoursite.com/tags/weapp/"/>
+    
+  </entry>
   
   <entry>
     <title>php 二维数组根据某个字段排序</title>
@@ -171,9 +203,9 @@
       <category term="Vagrant" scheme="http://yoursite.com/categories/Laravel/PHP/Vagrant/"/>
     
     
-      <category term="Laravel" scheme="http://yoursite.com/tags/Laravel/"/>
-    
       <category term="Vagrant" scheme="http://yoursite.com/tags/Vagrant/"/>
+    
+      <category term="Laravel" scheme="http://yoursite.com/tags/Laravel/"/>
     
   </entry>
   
@@ -354,9 +386,9 @@
       <category term="PHP" scheme="http://yoursite.com/categories/Laravel/PHP/"/>
     
     
-      <category term="Laravel" scheme="http://yoursite.com/tags/Laravel/"/>
-    
       <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+    
+      <category term="Laravel" scheme="http://yoursite.com/tags/Laravel/"/>
     
   </entry>
   
@@ -408,9 +440,9 @@
       <category term="PHP" scheme="http://yoursite.com/categories/Laravel/PHP/"/>
     
     
-      <category term="Laravel" scheme="http://yoursite.com/tags/Laravel/"/>
-    
       <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+    
+      <category term="Laravel" scheme="http://yoursite.com/tags/Laravel/"/>
     
   </entry>
   
@@ -511,34 +543,6 @@
     
     
       <category term="PostgreSQL" scheme="http://yoursite.com/tags/PostgreSQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mysql排行榜代码</title>
-    <link href="http://yoursite.com/2017/09/26/2017/SQL/MySQL/mysql%E6%8E%92%E8%A1%8C%E6%A6%9C%E4%BB%A3%E7%A0%81/"/>
-    <id>http://yoursite.com/2017/09/26/2017/SQL/MySQL/mysql排行榜代码/</id>
-    <published>2017-09-26T08:27:00.000Z</published>
-    <updated>2019-01-02T03:46:44.667Z</updated>
-    
-    <content type="html"><![CDATA[<p>显示前10位名次，并显示自己名次。 1.xxx 2.xxx ….. 10.xxxx 我的当前名次: 第xx名。 这样应该如何编写，主要就是如何显示自己名次。    </p><p>前十<a href="https://www.baidu.com/s?wd=SQL&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">SQL</a>：<br><a href="https://www.baidu.com/s?wd=SELECT&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">SELECT</a> * <a href="https://www.baidu.com/s?wd=FROM&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">FROM</a> `some_table`<br>    ORDER BY `score`<br>    <a href="https://www.baidu.com/s?wd=LIMIT&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">LIMIT</a> 10<br>自己名次如<a href="https://www.baidu.com/s?wd=ls&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">ls</a>：<br><a href="https://www.baidu.com/s?wd=SELECT&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">SELECT</a> COUNT(`score`) <a href="https://www.baidu.com/s?wd=FROM&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">FROM</a> `some_table`<br>    <a href="https://www.baidu.com/s?wd=WHERE&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">WHERE</a><code>score</code>&gt;(<a href="https://www.baidu.com/s?wd=SELECT&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">SELECT</a> `score`  <a href="https://www.baidu.com/s?wd=FROM&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">FROM</a> `some_table` <a href="https://www.baidu.com/s?wd=WHERE&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3rjuWuHbkujI-Pjn4Pvcs0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjc1PWmYPHfL" target="_blank" rel="noopener">WHERE</a> id=#用户的id);<br>就是获得比自己分数高的人有多少</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;显示前10位名次，并显示自己名次。 1.xxx 2.xxx ….. 10.xxxx 我的当前名次: 第xx名。 这样应该如何编写，主要就是如何显示自己名次。    &lt;/p&gt;
-&lt;p&gt;前十&lt;a href=&quot;https://www.baidu.com/s?wd=SQL&amp;amp;t
-      
-    
-    </summary>
-    
-      <category term="MySQL" scheme="http://yoursite.com/categories/MySQL/"/>
-    
-      <category term="SQL" scheme="http://yoursite.com/categories/MySQL/SQL/"/>
-    
-    
-      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
     
   </entry>
   
