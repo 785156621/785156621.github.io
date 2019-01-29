@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-17T09:52:12.248Z</updated>
+  <updated>2019-01-25T06:34:34.347Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,31 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>php 二维数组根据某个字段排序</title>
-    <link href="http://yoursite.com/2019/01/17/2019/PHP/php%20%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%A0%B9%E6%8D%AE%E6%9F%90%E4%B8%AA%E5%AD%97%E6%AE%B5%E6%8E%92%E5%BA%8F/"/>
-    <id>http://yoursite.com/2019/01/17/2019/PHP/php 二维数组根据某个字段排序/</id>
-    <published>2019-01-17T09:22:39.000Z</published>
-    <updated>2019-01-17T09:52:12.248Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 二维数组根据某个字段排序</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> array $array 要排序的数组</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> string $keys   要排序的键字段</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> string $sort  排序类型  SORT_ASC     SORT_DESC</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> array 排序后的数组</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">if</span> (function_exists(<span class="string">'array_sorting'</span>) === <span class="keyword">false</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">array_sorting</span><span class="params">($array, $keys, $sort = SORT_DESC)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $keysValue = [];</span><br><span class="line">        <span class="keyword">foreach</span> ($array <span class="keyword">as</span> $k =&gt; $v) &#123;</span><br><span class="line">            $keysValue[$k] = $v[$keys];</span><br><span class="line">        &#125;</span><br><span class="line">        array_multisort($keysValue, $sort, $array);</span><br><span class="line">        <span class="keyword">return</span> $array;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>相关链接：<a href="https://www.cnblogs.com/dcb3688/p/4608004.html" target="_blank" rel="noopener">https://www.cnblogs.com/dcb3688/p/4608004.html</a><br>&emsp;&emsp;&emsp;&emsp;&emsp;<a href="https://www.cnblogs.com/M-D-Luffy/p/4224127.html" target="_blank" rel="noopener">https://www.cnblogs.com/M-D-Luffy/p/4224127.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
-      
-    
-    </summary>
-    
-      <category term="PHP" scheme="http://yoursite.com/categories/PHP/"/>
-    
-    
-      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
-    
-  </entry>
   
   <entry>
     <title>微信小程序如何debug调试</title>
@@ -70,6 +45,31 @@
       <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
     
       <category term="weapp" scheme="http://yoursite.com/tags/weapp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php 二维数组根据某个字段排序</title>
+    <link href="http://yoursite.com/2019/01/17/2019/PHP/php%20%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%A0%B9%E6%8D%AE%E6%9F%90%E4%B8%AA%E5%AD%97%E6%AE%B5%E6%8E%92%E5%BA%8F/"/>
+    <id>http://yoursite.com/2019/01/17/2019/PHP/php 二维数组根据某个字段排序/</id>
+    <published>2019-01-17T09:22:39.000Z</published>
+    <updated>2019-01-17T09:52:12.248Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 二维数组根据某个字段排序</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> array $array 要排序的数组</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> string $keys   要排序的键字段</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> string $sort  排序类型  SORT_ASC     SORT_DESC</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> array 排序后的数组</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">if</span> (function_exists(<span class="string">'array_sorting'</span>) === <span class="keyword">false</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">array_sorting</span><span class="params">($array, $keys, $sort = SORT_DESC)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $keysValue = [];</span><br><span class="line">        <span class="keyword">foreach</span> ($array <span class="keyword">as</span> $k =&gt; $v) &#123;</span><br><span class="line">            $keysValue[$k] = $v[$keys];</span><br><span class="line">        &#125;</span><br><span class="line">        array_multisort($keysValue, $sort, $array);</span><br><span class="line">        <span class="keyword">return</span> $array;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>相关链接：<a href="https://www.cnblogs.com/dcb3688/p/4608004.html" target="_blank" rel="noopener">https://www.cnblogs.com/dcb3688/p/4608004.html</a><br>&emsp;&emsp;&emsp;&emsp;&emsp;<a href="https://www.cnblogs.com/M-D-Luffy/p/4224127.html" target="_blank" rel="noopener">https://www.cnblogs.com/M-D-Luffy/p/4224127.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://yoursite.com/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
     
   </entry>
   
