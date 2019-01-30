@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-25T06:34:34.347Z</updated>
+  <updated>2019-01-30T07:59:41.552Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>foreach中使用&amp;时的注意事项</title>
+    <link href="http://yoursite.com/2019/01/30/2019/PHP/foreach%E4%B8%AD%E4%BD%BF%E7%94%A8&amp;%E6%97%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
+    <id>http://yoursite.com/2019/01/30/2019/PHP/foreach中使用&amp;时的注意事项/</id>
+    <published>2019-01-30T10:25:39.000Z</published>
+    <updated>2019-01-30T07:59:41.552Z</updated>
+    
+    <content type="html"><![CDATA[<p>先来看看下面这段代码：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$arr = [<span class="number">111</span>, <span class="number">222</span>, <span class="number">333</span>];</span><br><span class="line"><span class="keyword">foreach</span> ( $arr <span class="keyword">as</span> &amp;$value ) &#123;</span><br><span class="line">    var_dump($value);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">foreach</span> ( $arr <span class="keyword">as</span> $value ) &#123;</span><br><span class="line">    var_dump($value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>运行结果：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">111</span></span><br><span class="line"><span class="number">222</span></span><br><span class="line"><span class="number">333</span></span><br><span class="line"><span class="number">111</span></span><br><span class="line"><span class="number">222</span></span><br><span class="line"><span class="number">222</span></span><br></pre></td></tr></table></figure><p>出现这种情况是因为在第一个foreach中，每次的循环都相当于：</p><p><code>$value = &amp;$arr[$i]; // $i 是$arr的索引</code></p><p>第一个foreach完成后，$value并没有注销掉，到第二个foreach时，每次的循环都相当于：</p><p><code>$value = $arr[$i]; // $i 是$arr的索引</code></p><p>但<code>$value</code>在第一个foreach中被定义为了一个引用值<code>$value = &amp;$arr[2]</code>，所以第二个foreach会更新<code>$arr[2]</code>的值。</p><p>所以，再次使用<code>$value</code>前需要<code>unset($value)</code>;</p><h3 id="手册说明"><a href="#手册说明" class="headerlink" title="手册说明"></a>手册说明</h3><p>可以很容易地通过在 $value 之前加上 &amp; 来修改数组的元素。此方法将以引用赋值而不是拷贝一个值。</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$arr = <span class="keyword">array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>);</span><br><span class="line"><span class="keyword">foreach</span> ($arr as &amp;$value) &#123;</span><br><span class="line">    $value = $value * <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// $arr is now array(2, 4, 6, 8) </span></span><br><span class="line"><span class="keyword">unset</span>($value); <span class="comment">// 最后取消掉引用</span></span><br></pre></td></tr></table></figure><p>$value 的引用仅在被遍历的数组可以被引用时才可用（例如是个变量）。以下代码则无法运行：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">foreach</span> (<span class="keyword">array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>) <span class="keyword">as</span> &amp;$value) &#123;</span><br><span class="line">    $value = $value * <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><div class="tip"><br>Warning<br>数组最后一个元素的 $value 引用在 foreach 循环之后仍会保留。建议使用 unset() 来将其销毁。<br></div><blockquote><p>Note:foreach 不支持用“@”来抑制错误信息的能力。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;先来看看下面这段代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/spa
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://yoursite.com/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>foreach 中 &amp;的用法</title>
+    <link href="http://yoursite.com/2019/01/30/2019/PHP/foreach%20%E4%B8%AD%20&amp;%E7%9A%84%E7%94%A8%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/01/30/2019/PHP/foreach 中 &amp;的用法/</id>
+    <published>2019-01-30T07:25:39.000Z</published>
+    <updated>2019-01-30T07:45:14.403Z</updated>
+    
+    <content type="html"><![CDATA[<p>例如有这样一个需求，要给数组添加一个新的元素。<br>这里的需求是统计商品的收入多少。就可以用到&amp;。</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$pro_arr = <span class="keyword">array</span>(</span><br><span class="line">    <span class="keyword">array</span>(<span class="string">'price'</span> =&gt;<span class="number">10</span> , <span class="string">'count'</span> =&gt; <span class="number">100</span>),</span><br><span class="line">    <span class="keyword">array</span>(<span class="string">'price'</span> =&gt;<span class="number">20</span> , <span class="string">'count'</span> =&gt; <span class="number">90</span> )</span><br><span class="line">);</span><br></pre></td></tr></table></figure><p>1、第一种办法：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">foreach</span> ($pro_arr <span class="keyword">as</span> $key=&gt;$val) &#123;</span><br><span class="line">    $pro_arr[$key][<span class="string">'total'</span>] = $val[<span class="string">'price'</span>]*$val[<span class="string">'count'</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>2、第二种办法：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">foreach</span> ($pro_arr <span class="keyword">as</span> &amp;$val) &#123;</span><br><span class="line">    $val[<span class="string">'total'</span>]=$val[<span class="string">'price'</span>]*$val[<span class="string">'count'</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;pre&gt;'</span>;</span><br><span class="line">print_r($pro_arr);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;/pre&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">Array</span></span><br><span class="line">(</span><br><span class="line">    [<span class="number">0</span>] =&gt; <span class="keyword">Array</span></span><br><span class="line">        (</span><br><span class="line">            [price] =&gt; <span class="number">10</span></span><br><span class="line">            [count] =&gt; <span class="number">100</span></span><br><span class="line">            [total] =&gt; <span class="number">1000</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    [<span class="number">1</span>] =&gt; <span class="keyword">Array</span></span><br><span class="line">        (</span><br><span class="line">            [price] =&gt; <span class="number">20</span></span><br><span class="line">            [count] =&gt; <span class="number">90</span></span><br><span class="line">            [total] =&gt; <span class="number">1800</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure><p>打印出来的效果是一样的。</p><p>本文转载自 <a href="https://blog.csdn.net/qq_38287952/article/details/79468321" target="_blank" rel="noopener">https://blog.csdn.net/qq_38287952/article/details/79468321</a> </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;例如有这样一个需求，要给数组添加一个新的元素。&lt;br&gt;这里的需求是统计商品的收入多少。就可以用到&amp;amp;。&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://yoursite.com/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+    
+  </entry>
   
   <entry>
     <title>微信小程序如何debug调试</title>
@@ -493,56 +545,6 @@
     
     
       <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Sublime Text 3设置吊炸天PHP开发环境</title>
-    <link href="http://yoursite.com/2017/09/29/2017/Others/Sublime%20Text%203%E8%AE%BE%E7%BD%AE%E5%90%8A%E7%82%B8%E5%A4%A9PHP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
-    <id>http://yoursite.com/2017/09/29/2017/Others/Sublime Text 3设置吊炸天PHP开发环境/</id>
-    <published>2017-09-29T05:45:23.000Z</published>
-    <updated>2019-01-02T03:46:44.668Z</updated>
-    
-    <content type="html"><![CDATA[<p>原文链接：<a href="http://blog.csdn.net/heiyeshuwu/article/details/51859571" target="_blank" rel="noopener">http://blog.csdn.net/heiyeshuwu/article/details/51859571</a> <a href="http://blog.csdn.net/menglongfc/article/details/51141084" target="_blank" rel="noopener">http://blog.csdn.net/menglongfc/article/details/51141084</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;原文链接：&lt;a href=&quot;http://blog.csdn.net/heiyeshuwu/article/details/51859571&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://blog.csdn.net/heiyeshuwu/ar
-      
-    
-    </summary>
-    
-      <category term="PHP" scheme="http://yoursite.com/categories/PHP/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>pgsql 关闭自动提交事务</title>
-    <link href="http://yoursite.com/2017/09/28/2017/SQL/PostgreSQL/pgsql%20%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%8F%90%E4%BA%A4%E4%BA%8B%E5%8A%A1/"/>
-    <id>http://yoursite.com/2017/09/28/2017/SQL/PostgreSQL/pgsql 关闭自动提交事务/</id>
-    <published>2017-09-28T08:39:49.000Z</published>
-    <updated>2019-01-02T03:46:44.668Z</updated>
-    
-    <content type="html"><![CDATA[<p>最早以前,  postgresql服务端有 autocommit开关, 然而又有语句 begin transaction 来控制事务, 这样可能会造成混乱, 比如 autocommit=on的情况下, 用begin transaction启动手工事务,此时autocommit到底是on 还是off? 后来干脆就取消autocommit开关, 只有一条命令begin transaction来管理事务, 越简单越不易混乱.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;最早以前,  postgresql服务端有 autocommit开关, 然而又有语句 begin transaction 来控制事务, 这样可能会造成混乱, 比如 autocommit=on的情况下, 用begin transaction启动手工事务,此时autocommi
-      
-    
-    </summary>
-    
-      <category term="PostgreSql" scheme="http://yoursite.com/categories/PostgreSql/"/>
-    
-      <category term="SQL" scheme="http://yoursite.com/categories/PostgreSql/SQL/"/>
-    
-    
-      <category term="PostgreSQL" scheme="http://yoursite.com/tags/PostgreSQL/"/>
     
   </entry>
   
